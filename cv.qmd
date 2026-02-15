@@ -1,0 +1,543 @@
+---
+## ============================================================================
+## QUARTO YAML FRONT MATTER
+## ============================================================================
+## Everything between the two '---' lines is YAML metadata that Quarto reads
+## to configure how the document is rendered. YAML is indentation-sensitive:
+## child keys must be indented exactly 2 spaces under their parent.
+## ============================================================================
+
+## 'title' is left empty so that Quarto does not auto-generate a title block.
+## Instead, we build our own custom header in the document body using raw LaTeX.
+title: ""
+
+## 'format' specifies the output format(s). Here we only produce a PDF.
+format:
+  pdf:
+    ## 'documentclass: article' tells LaTeX to use the standard "article" class,
+    ## which is a general-purpose class suitable for short documents like CVs
+    ## (as opposed to 'report' or 'book' which add chapter-level structure).
+    documentclass: article
+
+    ## 'pdf-engine: xelatex' selects XeLaTeX as the PDF compiler instead of
+    ## the default pdflatex. XeLaTeX is required because:
+    ##   1. It supports the 'fontspec' package, which lets us load system fonts
+    ##      (like Times New Roman) by name — pdflatex cannot do this.
+    ##   2. It has full Unicode support out of the box.
+    pdf-engine: xelatex
+
+    ## 'papersize: letter' sets the page size to US Letter (8.5 x 11 inches).
+    ## Alternatives include 'a4' for international A4 paper.
+    papersize: letter
+
+    ## 'fontsize: 11pt' sets the base font size for the entire document.
+    ## LaTeX article class supports 10pt, 11pt, or 12pt as base sizes.
+    fontsize: 11pt
+
+    ## 'geometry' passes options to the LaTeX 'geometry' package, which controls
+    ## page margins. Each item in this YAML list becomes a package option.
+    ## Smaller margins = more usable space for CV content.
+    geometry:
+      - top=15mm       ## Top margin: 15mm (relatively tight for a CV)
+      - left=14mm      ## Left margin: 14mm (tighter to give content more room)
+      - right=10mm     ## Right margin: 10mm (tight to maximize content width)
+      - bottom=15mm    ## Bottom margin: 15mm
+
+    ## 'colorlinks: true' makes hyperlinks appear in color instead of being
+    ## surrounded by colored boxes (the default in LaTeX hyperref package).
+    colorlinks: true
+
+    ## 'linkcolor' and 'urlcolor' set the color for internal cross-references
+    ## and external URL hyperlinks, respectively. Both are set to blue here.
+    linkcolor: blue
+    urlcolor: blue
+
+    ## ========================================================================
+    ## include-in-header
+    ## ========================================================================
+    ## 'include-in-header' injects raw LaTeX code into the document preamble
+    ## (the area between \documentclass{} and \begin{document} in LaTeX).
+    ## The preamble is where you load packages, define custom commands, and set
+    ## document-wide formatting options. Anything placed here is executed BEFORE
+    ## the document body begins.
+    ##
+    ## 'text: |' means the value is a YAML literal block scalar — everything
+    ## indented below it (until the indentation returns to a higher level)
+    ## is treated as a single multi-line string and passed verbatim to LaTeX.
+    ## The '|' preserves newlines exactly as written.
+    ## ========================================================================
+    include-in-header:
+      text: |
+        %% =====================================================================
+        %% FONT CONFIGURATION
+        %% =====================================================================
+        %% 'fontspec' is a LaTeX package that provides an interface for loading
+        %% OpenType and TrueType fonts by name when using XeLaTeX or LuaLaTeX.
+        %% Without fontspec, LaTeX can only use its own built-in font system.
+        \usepackage{fontspec}
+
+        %% \setmainfont sets the primary text font for the entire document.
+        %% Because we are using XeLaTeX + fontspec, we can reference any font
+        %% installed on the system by its name. Times New Roman is located at:
+        %%   /usr/share/fonts/truetype/msttcorefonts/
+        %% fontspec finds it automatically by name, so no path is needed.
+        %%
+        %% This replaces the previous EB Garamond configuration, which required
+        %% explicit Path, Extension, and font-file mappings because those fonts
+        %% were installed in a non-standard location.
+        \setmainfont{Times New Roman}
+
+        %% =====================================================================
+        %% LIST FORMATTING
+        %% =====================================================================
+        %% 'enumitem' provides fine-grained control over list environments
+        %% (itemize, enumerate, description). We use it below to make bullet
+        %% lists compact (no extra spacing) for a dense CV layout.
+        \usepackage{enumitem}
+
+        %% =====================================================================
+        %% PAGE STYLE AND SPACING
+        %% =====================================================================
+        %% \pagestyle{empty} removes headers, footers, and page numbers.
+        %% This is standard for CVs — page numbers add clutter and the document
+        %% length is obvious from context.
+        \pagestyle{empty}
+
+        %% \linespread{0.95} tightens line spacing to 95% of the default.
+        %% \selectfont activates the change immediately. This gives the CV a
+        %% compact, professional appearance without feeling cramped.
+        %% Override the base font size to 8pt. The second argument (9.6pt)
+        %% is the baseline skip (line spacing), set to 1.2x the font size.
+        %% \selectfont activates both this and the \linespread together.
+        \fontsize{8pt}{9.6pt}
+        \linespread{0.95}\selectfont
+
+        %% Remove all paragraph spacing and indentation. In a CV, content is
+        %% structured by sections and commands, not by paragraph flow, so
+        %% default paragraph formatting would just waste space.
+        \setlength{\parskip}{0pt}      %% No extra space between paragraphs
+        \setlength{\parindent}{0pt}    %% No first-line indentation
+
+        %% Configure all itemize (bullet) lists to be compact:
+        %%   leftmargin=*   → auto-calculate minimal left margin
+        %%   topsep=0pt     → no space above/below the list
+        %%   itemsep=0pt    → no space between items
+        %%   parsep=0pt     → no space between paragraphs within an item
+        \setlist[itemize]{leftmargin=*,topsep=0pt,itemsep=0pt,parsep=0pt}
+
+        %% =====================================================================
+        %% LAYOUT DIMENSIONS — TWO-COLUMN CV GRID
+        %% =====================================================================
+        %% The CV uses a two-column layout: a narrow left column for section
+        %% labels (e.g., "EDUCATION", "WORK EXPERIENCE") and a wide right
+        %% column for the actual content. These three lengths define that grid.
+
+        %% Left column width: holds the section label (e.g., "EDUCATION").
+        %% 3.0cm is wide enough for most labels while leaving plenty of room
+        %% for content on the right.
+        \newlength{\lcolwidth}
+        \setlength{\lcolwidth}{3.0cm}
+
+        %% Gap between the left label column and the right content column.
+        \newlength{\colgap}
+        \setlength{\colgap}{0.3cm}
+
+        %% Right column width: computed automatically as whatever space remains
+        %% after subtracting the left column and the gap from the full text
+        %% width. \dimexpr performs arithmetic on LaTeX dimensions.
+        \newlength{\rcolwidth}
+        \setlength{\rcolwidth}{\dimexpr\textwidth-\lcolwidth-\colgap\relax}
+
+        %% Width of the right-side "date box" inside entries. This box holds
+        %% the date range and location, centered as a unit. 5.2cm comfortably
+        %% fits dates like "January 2022 - May 2022" with breathing room.
+        \newlength{\dateboxwidth}
+        \setlength{\dateboxwidth}{4.6cm}
+
+        %% =====================================================================
+        %% CUSTOM COMMANDS
+        %% =====================================================================
+        %% These commands are the building blocks of every CV section. They
+        %% enforce consistent formatting so you never have to manually align
+        %% columns or remember spacing values.
+
+        %% ----- \cvrow{LABEL}{CONTENT} -----
+        %% The fundamental two-column row. Places a bold label in the left
+        %% column and arbitrary content in the right column.
+        %%   #1 = Section label text (e.g., "EDUCATION", "WORK\\EXPERIENCE")
+        %%        Use \\ inside the label for line breaks in multi-word labels.
+        %%   #2 = Right-column content (can be anything: text, lists, tables)
+        %%
+        %% \parbox[t] creates a box with top-aligned text. This ensures the
+        %% label and content align at the top even when the right column has
+        %% many lines. \centering centers multi-line labels (like "SELECTED
+        %% PUBLICATIONS") horizontally within the narrow left column.
+        \newcommand{\cvrow}[2]{%
+          \noindent\parbox[t]{\lcolwidth}{\centering\textbf{#1}}%
+          \hspace{\colgap}%
+          \parbox[t]{\rcolwidth}{#2}%
+        }
+
+        %% ----- \cvrule -----
+        %% A full-width horizontal rule to separate CV sections visually.
+        %% 0.4pt is the line thickness; 4pt of vertical space is added above
+        %% and below the rule for breathing room.
+        \newcommand{\cvrule}{\vspace{4pt}\noindent\rule{\textwidth}{0.4pt}\vspace{4pt}}
+
+        %% ----- \cventry{TITLE}{ORG}{DATE}{INSTITUTION}{LOCATION}{BULLETS} -----
+        %% A structured entry for work experience, teaching, etc. Produces:
+        %%   **Title** | Org                          Date
+        %%   Institution                           Location
+        %%   - bullet 1
+        %%   - bullet 2
+        %%
+        %% The entry uses two side-by-side \parbox regions:
+        %%   Left box  — title/org on line 1, institution on line 2
+        %%   Right box — date on line 1, location on line 2, both centered
+        %% The right box has a fixed width (\dateboxwidth) so dates and
+        %% locations align as their own visual unit, centered relative to
+        %% each other with breathing room from the title text.
+        %%
+        %%   #1 = Role/position title (rendered bold)
+        %%   #2 = Organization or group name (after a pipe separator)
+        %%   #3 = Date range (centered in right box)
+        %%   #4 = Parent institution (e.g., "Georgia Institute of Technology")
+        %%   #5 = Location (e.g., "Atlanta, GA")
+        %%   #6 = Bullet points — must be \item entries (wrapped in itemize)
+        \newcommand{\cventry}[6]{%
+          \noindent
+          \parbox[t]{\dimexpr\rcolwidth-\dateboxwidth-0.15cm\relax}{%
+            \raggedright\textbf{#1} | #2\\#4%
+          }%
+          \hfill
+          \parbox[t]{\dateboxwidth}{%
+            \raggedleft\begin{tabular}[t]{@{}c@{}}#3\\#5\end{tabular}%
+          }%
+          \vspace{2pt}%
+          \begin{itemize}#6\end{itemize}%
+        }
+
+        %% ----- \cventryplain{TITLE}{DATE}{INSTITUTION}{LOCATION}{BULLETS} -----
+        %% Same as \cventry but WITHOUT the "| Org" separator. Use this when
+        %% the role title stands alone (e.g., "Co-Founder and President of
+        %% Puerto Rican Student Association" already includes the org name).
+        %% Same two-box layout as \cventry — left for title/institution,
+        %% right for centered date/location.
+        %%
+        %%   #1 = Role/position title (rendered bold)
+        %%   #2 = Date range (centered in right box)
+        %%   #3 = Parent institution
+        %%   #4 = Location
+        %%   #5 = Bullet points — must be \item entries
+        \newcommand{\cventryplain}[5]{%
+          \noindent
+          \parbox[t]{\dimexpr\rcolwidth-\dateboxwidth-0.15cm\relax}{%
+            \raggedright\textbf{#1}\\#3%
+          }%
+          \hfill
+          \parbox[t]{\dateboxwidth}{%
+            \raggedleft\begin{tabular}[t]{@{}c@{}}#2\\#4\end{tabular}%
+          }%
+          \vspace{2pt}%
+          \begin{itemize}#5\end{itemize}%
+        }
+
+        %% ----- \cvaward{TITLE}{DATE}{DESCRIPTION} -----
+        %% A compact entry for honors and awards. Produces:
+        %%   **Title**                                              Date
+        %%   Description text
+        %%
+        %%   #1 = Award name (rendered bold)
+        %%   #2 = Date received (right-aligned)
+        %%   #3 = Short description or context
+        %% \\[1pt] adds a tiny 1pt vertical gap between the title line and
+        %% the description. \par ends the paragraph and  adds
+        %% space before the next award entry.
+        \newcommand{\cvaward}[3]{%
+          \textbf{#1} \hfill #2\\[1pt]
+          #3\par\vspace{10pt}%
+        }
+---
+
+<!-- ==========================================================================
+     DOCUMENT BODY
+     ==========================================================================
+     Everything below the '---' closing delimiter is the document body. Quarto
+     passes it through Pandoc, which recognizes raw LaTeX blocks and includes
+     them verbatim in the output.
+
+     IMPORTANT: In the body, use HTML comments (these) for annotations — NOT
+     LaTeX %% comments. Pandoc does not strip %% in the body; it passes them
+     to LaTeX where they can cause compilation errors if they contain special
+     characters. The %% style ONLY works inside the 'include-in-header' block
+     above, which is injected directly into the LaTeX preamble.
+     ========================================================================== -->
+
+
+<!-- ==========================================================================
+     HEADER — Name and title banner at the top of the CV
+     ==========================================================================
+     tabular* stretches to the full \textwidth. The @{} removes default column
+     padding, and @{\extracolsep{\fill}} pushes the right column flush-right.
+     This creates a two-cell row: name on the left, title+school on the right.
+     ========================================================================== -->
+\begin{tabular*}{\textwidth}{@{}c@{\extracolsep{\fill}}c@{}}
+{\fontsize{18.0pt}{21.6pt}\selectfont\textbf{John Smith}} & {\fontsize{18.0pt}{21.6pt}\selectfont\textbf{Computer Science PhD Student}} \\[2pt]
+U.S. Citizen & {\fontsize{18.0pt}{21.6pt}\selectfont\textbf{Stanford University}} \\
+\end{tabular*}
+
+\vspace{28pt}
+
+<!-- ==========================================================================
+     CONTACT — Personal and professional contact information
+     ==========================================================================
+     Uses a nested tabular inside \cvrow to create a two-column grid of contact
+     fields. @{\qquad} inserts a wide space between columns. \href creates
+     clickable hyperlinks in the PDF (via the hyperref package loaded by Quarto).
+     \multicolumn{2}{...} spans both columns for the LinkedIn row since the URL
+     is too long for a single column.
+     ========================================================================== -->
+\cvrow{CONTACT}{%
+  \parbox[t]{0.48\rcolwidth}{%
+    \raggedright
+    \textbf{Email:} \href{mailto:jsmith@stanford.edu}{jsmith@stanford.edu}\\
+    \textbf{Phone:} (555) 123-4567%
+  }%
+  \hfill
+  \parbox[t]{0.48\rcolwidth}{%
+    \raggedleft
+    \textbf{Github:} \href{https://github.com/johnsmith}{https://github.com/johnsmith}\\
+    \textbf{Research Website:} \href{https://www.johnsmith-research.com/}{https://www.johnsmith-research.com/}%
+  }%
+  \\[2pt]
+  \textbf{LinkedIn:} \href{https://www.linkedin.com/in/john-smith-cs/}{https://www.linkedin.com/in/john-smith-cs/}%
+}
+
+\cvrule
+
+<!-- ==========================================================================
+     TECHNICAL SKILLS — Categorized list of competencies
+     ==========================================================================
+     Each skill category is a bold label followed by a comma-separated list.
+     The \\ in "TECHNICAL\\SKILLS" creates a line break within the left-column
+     label so it fits in the narrow 3cm column.
+     ========================================================================== -->
+\cvrow{TECHNICAL\\SKILLS}{
+  \vspace{-8pt}
+  \begin{itemize}
+  \item \textbf{Programming Languages:} Python, C/C++, Java, Rust
+  \item \textbf{Frameworks \& Libraries:} PyTorch, TensorFlow, JAX, Hugging Face, scikit-learn
+  \item \textbf{Development \& DevOps Tools:} Docker, Kubernetes, CI/CD, Git/GitHub
+  \item \textbf{Cloud \& Infrastructure:} AWS, GCP, SLURM cluster management
+  \item \textbf{Languages:} English (Native), Spanish (Conversational)
+  \end{itemize}%
+}
+
+\cvrule
+
+<!-- ==========================================================================
+     EDUCATION — Academic degrees and honors
+     ==========================================================================
+     Two education entries are stacked vertically within a single \cvrow.
+     \vspace{2pt} adds a small gap between the two schools.
+     \textit{} renders minors and certificates in italics to visually
+     distinguish them from the primary degree line.
+     ========================================================================== -->
+\cvrow{EDUCATION}{%
+  \textbf{Stanford University} | 2022-2027\\
+  Ph.D. in Computer Science
+  \begin{itemize}
+  \item GPA: 4.0/4.0
+  \item Advisor: Dr. Alice Johnson
+  \item Knight-Hennessy Scholar
+  \end{itemize}
+
+  \vspace{10pt}
+
+  \textbf{University of California, Berkeley} | 2018-2022\\
+  Honors Bachelor of Science in Computer Science\\
+  \textit{Minor in Mathematics}\\
+  \textit{Minor in Statistics}
+  \begin{itemize}
+  \item GPA: 3.9/4.0 Summa Cum Laude
+  \item Regents' and Chancellor's Scholar
+  \item Dean's Honor List (all semesters)
+  \end{itemize}%
+}
+
+\cvrule
+
+<!-- ==========================================================================
+     WORK EXPERIENCE — Professional and research positions
+     ==========================================================================
+     PATTERN FOR ADDING NEW ENTRIES:
+       1. The FIRST entry in a section uses \cvrow{SECTION LABEL}{...}
+       2. All SUBSEQUENT entries use \cvrow{}{...} (empty left column) so the
+          label only appears once but entries continue in the right column.
+       3. \vspace{2pt} between entries adds a small visual gap.
+       4. Use \cventry for roles with a separate org (Title | Org format).
+       5. Use \cventryplain for roles where the title already includes the org.
+
+     ===== ADD NEW WORK ENTRIES HERE (copy a \cventry block wrapped in \cvrow{}{...}) =====
+     ========================================================================== -->
+
+\cvrow{WORK\\EXPERIENCE}{%
+  \cventry{Graduate Research Assistant}{Reliable AI Lab}{August 2022 - Present}
+    {Stanford University}{Stanford, CA}{%
+    \item Advised by Dr. Alice Johnson
+    \item Developed novel methods for uncertainty quantification in large language models
+    \item Designed scalable training pipelines for distributed model fine-tuning
+    \item Published and presented research at top ML and NLP conferences
+  }%
+}
+
+\vspace{10pt}
+
+\cvrow{}{%
+  \cventry{Teaching Assistant}{CS 229: Machine Learning}{January 2024 - Present}
+    {Stanford University}{Stanford, CA}{%
+    \item Aided professor in instruction of this foundational graduate course
+    \item Held weekly office hours and review sessions for 200+ students
+    \item Developed new homework assignments on deep learning and optimization
+    \item Mentored undergraduate students on course research projects
+  }%
+}
+
+\vspace{10pt}
+
+\cvrow{}{%
+  \cventry{Research Intern}{Applied AI Research Group}{May 2021 - August 2021}
+    {Microsoft Research}{Redmond, WA}{%
+    \item Investigated few-shot learning techniques for code generation
+    \item Contributed to an internal tool for automated code review using transformer models
+    \item Collaborated with a team of 5 researchers on a publication submitted to NeurIPS
+  }%
+}
+
+\cvrule
+
+<!-- ==========================================================================
+     SELECTED PUBLICATIONS — Peer-reviewed and submitted papers
+     ==========================================================================
+     Publications are free-form text (not using \cventry) since citation formats
+     don't fit the role/org/date structure. \textbf{} highlights your name.
+     \textit{} is used for venue names and status notes (e.g., "under revision").
+      separates individual publication entries.
+
+     ===== ADD NEW PUBLICATIONS HERE =====
+     ========================================================================== -->
+
+\cvrow{SELECTED\\PUBLICATIONS}{%
+  \textbf{J. Smith}, R. Patel, and A. Johnson, ``Calibrated Uncertainty Estimation for Large Language Models via Conformal Prediction.'' \textit{2024 International Conference on Machine Learning (ICML)}
+
+  \vspace{10pt}
+
+  M. Chen, \textbf{J. Smith}, and A. Johnson, ``Efficient Fine-Tuning of Vision-Language Models with Structured Pruning.'' Submitted to IEEE Transactions on Pattern Analysis and Machine Intelligence. \textit{(under revision)}
+
+  \vspace{10pt}
+
+  \textbf{J. Smith}, L. Wang, and D. Garcia, ``Scaling Laws for Few-Shot Code Generation with Retrieval-Augmented Transformers.'' \textit{2023 Conference on Neural Information Processing Systems (NeurIPS)}%
+}
+
+\cvrule
+
+<!-- ==========================================================================
+     RESEARCH INTERESTS — Bulleted list of research areas
+     ========================================================================== -->
+\cvrow{RESEARCH\\INTERESTS}{%
+  \vspace{-8pt}
+  \parbox[t]{0.48\rcolwidth}{%
+    \begin{itemize}
+    \item Machine Learning
+    \item Natural Language Processing
+    \item Uncertainty Quantification
+    \end{itemize}%
+  }%
+  \hfill
+  \parbox[t]{0.48\rcolwidth}{%
+    \begin{itemize}
+    \item Trustworthy AI
+    \item Few-Shot and Transfer Learning
+    \item AI for Code
+    \end{itemize}%
+  }%
+}
+
+\cvrule
+
+<!-- ==========================================================================
+     OPEN-SOURCE CONTRIBUTIONS — Notable open-source projects
+     ========================================================================== -->
+\cvrow{{\fontsize{10.3pt}{11.0pt}\selectfont OPEN-SOURCE\\CONTRIBUTIONS}}{%
+  \vspace{-8pt}
+  \begin{itemize}
+  \item \textbf{ConformalLLM:} Developed and open-sourced a Python library for applying conformal prediction to large language model outputs; 500+ GitHub stars and adopted by two research groups.
+
+  \item \textbf{PyTorch Documentation:} Contributed tutorial improvements and bug fixes to the official PyTorch documentation and examples repository.
+
+  \end{itemize}%
+}
+
+
+\cvrule
+
+<!-- ==========================================================================
+     SERVICE — Volunteer, leadership, and community roles
+     ==========================================================================
+     Uses a mix of \cventryplain (when the title already names the org) and
+     \cventry (when title and org are separate). Same continuation pattern as
+     WORK EXPERIENCE: first entry gets the label, subsequent entries use
+     \cvrow{}{...} with an empty left column.
+
+     ===== ADD NEW SERVICE ENTRIES HERE (copy a \cventry or \cventryplain block) =====
+     ========================================================================== -->
+
+\cvrow{SERVICE}{%
+  \cventryplain{Co-Founder and President of CS Graduate Student Council}{August 2023 - Present}
+    {Stanford University}{Stanford, CA}{%
+    \item Founded a graduate student organization to advocate for CS PhD student needs
+    \item Organized professional development workshops and networking events
+    \item Coordinated with department leadership on curriculum and qualifying exam feedback
+    \item Grew membership from 15 founding members to 120+ active participants
+  }%
+}
+
+\vspace{10pt}
+
+\cvrow{}{%
+  \cventryplain{Undergraduate Research Mentor}{August 2023 - May 2024}
+    {Stanford University}{Stanford, CA}{%
+    \item Mentored three undergraduate students on independent ML research projects
+    \item Guided students in Python, PyTorch, experiment design, and scientific writing
+  }%
+}
+
+\cvrule
+
+<!-- ==========================================================================
+     HONORS AND AWARDS — Scholarships, fellowships, and recognition
+     ==========================================================================
+     Uses the \cvaward{TITLE}{DATE}{DESCRIPTION} command for a compact format.
+     Awards are split across multiple \cvrow blocks. The first block carries
+     the "HONORS AND AWARDS" label; continuation blocks use \cvrow{}{...} with
+     an empty left column. This split is done to avoid exceeding LaTeX's box
+     capacity limits for very long content in a single \parbox.
+
+     ===== ADD NEW AWARDS HERE (copy a \cvaward block) =====
+     ========================================================================== -->
+
+\cvrow{HONORS AND\\AWARDS}{%
+  \cvaward{Best Paper Award at ICML Workshop on Reliable ML}{July 2024}
+    {Recognized for novel contributions to uncertainty quantification in language models}
+
+  \cvaward{Knight-Hennessy Scholarship at Stanford University}{August 2022}
+    {Full-ride scholarship for graduate students demonstrating leadership and civic commitment}
+
+
+  \cvaward{Summa Cum Laude Honors at UC Berkeley}{May 2022}
+    {Berkeley, CA}
+
+
+  \cvaward{CRA Outstanding Undergraduate Researcher Honorable Mention}{December 2021}
+    {National recognition for undergraduate research contributions in computer science}
+}
