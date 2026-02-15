@@ -307,7 +307,7 @@ U.S. Citizen & {\fontsize{18.0pt}{21.6pt}\selectfont\textbf{Stanford University}
   \parbox[t]{0.48\rcolwidth}{%
     \raggedleft
     \textbf{Github:} \href{https://github.com/johnsmith}{https://github.com/johnsmith}\\
-    \textbf{Research Website:} \href{https://www.johnsmith-research.com/}{https://www.johnsmith-research.com/}%
+    \textbf{Research Website:} \href{https://www.johnsmith.com/}{https://www.johnsmith.com/}%
   }%
   \\[2pt]
   \textbf{LinkedIn:} \href{https://www.linkedin.com/in/john-smith-cs/}{https://www.linkedin.com/in/john-smith-cs/}%
