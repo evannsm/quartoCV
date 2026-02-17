@@ -1,0 +1,4 @@
+\begin{tabular*}{\textwidth}{@{}c@{\extracolsep{\fill}}c@{}}
+{\fontsize{18.0pt}{21.6pt}\selectfont\textbf{John Smith}} & {\fontsize{18.0pt}{21.6pt}\selectfont\textbf{Computer Science PhD Student}} \\[2pt]
+U.S. Citizen & {\fontsize{18.0pt}{21.6pt}\selectfont\textbf{Stanford University}} \\
+\end{tabular*}

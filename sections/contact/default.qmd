@@ -1,0 +1,15 @@
+\cvrow{CONTACT}{%
+  \parbox[t]{0.48\rcolwidth}{%
+    \raggedright
+    \textbf{Email:} \href{mailto:jsmith@stanford.edu}{jsmith@stanford.edu}\\
+    \textbf{Phone:} (555) 123-4567%
+  }%
+  \hfill
+  \parbox[t]{0.48\rcolwidth}{%
+    \raggedleft
+    \textbf{Github:} \href{https://github.com/johnsmith}{https://github.com/johnsmith}\\
+    \textbf{Research Website:} \href{https://www.johnsmith.com/}{https://www.johnsmith.com/}%
+  }%
+  \\[2pt]
+  \textbf{LinkedIn:} \href{https://www.linkedin.com/in/john-smith-cs/}{https://www.linkedin.com/in/john-smith-cs/}%
+}

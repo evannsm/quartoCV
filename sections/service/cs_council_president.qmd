@@ -1,0 +1,7 @@
+\cventryplain{Co-Founder and President of CS Graduate Student Council}{August 2023 - Present}
+  {Stanford University}{Stanford, CA}{%
+  \item Founded a graduate student organization to advocate for CS PhD student needs
+  \item Organized professional development workshops and networking events
+  \item Coordinated with department leadership on curriculum and qualifying exam feedback
+  \item Grew membership from 15 founding members to 120+ active participants
+}%

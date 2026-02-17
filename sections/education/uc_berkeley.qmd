@@ -1,0 +1,9 @@
+\textbf{University of California, Berkeley} | 2018-2022\\
+Honors Bachelor of Science in Computer Science\\
+\textit{Minor in Mathematics}\\
+\textit{Minor in Statistics}
+\begin{itemize}
+\item GPA: 3.9/4.0 Summa Cum Laude
+\item Regents' and Chancellor's Scholar
+\item Dean's Honor List (all semesters)
+\end{itemize}%

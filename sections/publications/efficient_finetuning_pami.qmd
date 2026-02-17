@@ -1,0 +1,1 @@
+M. Chen, \textbf{J. Smith}, and A. Johnson, ``Efficient Fine-Tuning of Vision-Language Models with Structured Pruning.'' Submitted to IEEE Transactions on Pattern Analysis and Machine Intelligence. \textit{(under revision)}

@@ -1,0 +1,1 @@
+\textbf{J. Smith}, L. Wang, and D. Garcia, ``Scaling Laws for Few-Shot Code Generation with Retrieval-Augmented Transformers.'' \textit{2023 Conference on Neural Information Processing Systems (NeurIPS)}%

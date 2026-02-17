@@ -1,0 +1,18 @@
+\cvrow{RESEARCH\\INTERESTS}{%
+  \vspace{-8pt}
+  \parbox[t]{0.48\rcolwidth}{%
+    \begin{itemize}
+    \item Machine Learning
+    \item Natural Language Processing
+    \item Uncertainty Quantification
+    \end{itemize}%
+  }%
+  \hfill
+  \parbox[t]{0.48\rcolwidth}{%
+    \begin{itemize}
+    \item Trustworthy AI
+    \item Few-Shot and Transfer Learning
+    \item AI for Code
+    \end{itemize}%
+  }%
+}

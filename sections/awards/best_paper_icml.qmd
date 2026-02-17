@@ -1,0 +1,2 @@
+\cvaward{Best Paper Award at ICML Workshop on Reliable ML}{July 2024}
+  {Recognized for novel contributions to uncertainty quantification in language models}

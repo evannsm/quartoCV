@@ -1,0 +1,7 @@
+\cventry{Graduate Research Assistant}{Reliable AI Lab}{August 2022 - Present}
+  {Stanford University}{Stanford, CA}{%
+  \item Advised by Dr. Alice Johnson
+  \item Developed novel methods for uncertainty quantification in large language models
+  \item Designed scalable training pipelines for distributed model fine-tuning
+  \item Published and presented research at top ML and NLP conferences
+}%

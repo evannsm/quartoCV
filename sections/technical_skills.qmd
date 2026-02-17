@@ -1,0 +1,10 @@
+\cvrow{TECHNICAL\\SKILLS}{
+  \vspace{-8pt}
+  \begin{itemize}
+  \item \textbf{Programming Languages:} Python, C/C++, Java, Rust
+  \item \textbf{Frameworks \& Libraries:} PyTorch, TensorFlow, JAX, Hugging Face, scikit-learn
+  \item \textbf{Development \& DevOps Tools:} Docker, Kubernetes, CI/CD, Git/GitHub
+  \item \textbf{Cloud \& Infrastructure:} AWS, GCP, SLURM cluster management
+  \item \textbf{Languages:} English (Native), Spanish (Conversational)
+  \end{itemize}%
+}

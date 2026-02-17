@@ -1,0 +1,7 @@
+\textbf{Stanford University} | 2022-2027\\
+Ph.D. in Computer Science
+\begin{itemize}
+\item GPA: 4.0/4.0
+\item Advisor: Dr. Alice Johnson
+\item Knight-Hennessy Scholar
+\end{itemize}

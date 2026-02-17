@@ -1,0 +1,7 @@
+\cventry{Teaching Assistant}{CS 229: Machine Learning}{January 2024 - Present}
+  {Stanford University}{Stanford, CA}{%
+  \item Aided professor in instruction of this foundational graduate course
+  \item Held weekly office hours and review sessions for 200+ students
+  \item Developed new homework assignments on deep learning and optimization
+  \item Mentored undergraduate students on course research projects
+}%

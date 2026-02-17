@@ -1,0 +1,189 @@
+%% =====================================================================
+%% FONT CONFIGURATION
+%% =====================================================================
+%% 'fontspec' is a LaTeX package that provides an interface for loading
+%% OpenType and TrueType fonts by name when using XeLaTeX or LuaLaTeX.
+%% Without fontspec, LaTeX can only use its own built-in font system.
+\usepackage{fontspec}
+
+%% \setmainfont sets the primary text font for the entire document.
+%% Because we are using XeLaTeX + fontspec, we can reference any font
+%% installed on the system by its name. Times New Roman is located at:
+%%   /usr/share/fonts/truetype/msttcorefonts/
+%% fontspec finds it automatically by name, so no path is needed.
+%%
+%% This replaces the previous EB Garamond configuration, which required
+%% explicit Path, Extension, and font-file mappings because those fonts
+%% were installed in a non-standard location.
+\setmainfont{Times New Roman}
+
+%% =====================================================================
+%% LIST FORMATTING
+%% =====================================================================
+%% 'enumitem' provides fine-grained control over list environments
+%% (itemize, enumerate, description). We use it below to make bullet
+%% lists compact (no extra spacing) for a dense CV layout.
+\usepackage{enumitem}
+
+%% =====================================================================
+%% PAGE STYLE AND SPACING
+%% =====================================================================
+%% \pagestyle{empty} removes headers, footers, and page numbers.
+%% This is standard for CVs — page numbers add clutter and the document
+%% length is obvious from context.
+\pagestyle{empty}
+
+%% \linespread{0.95} tightens line spacing to 95% of the default.
+%% \selectfont activates the change immediately. This gives the CV a
+%% compact, professional appearance without feeling cramped.
+%% Override the base font size to 8pt. The second argument (9.6pt)
+%% is the baseline skip (line spacing), set to 1.2x the font size.
+%% \selectfont activates both this and the \linespread together.
+\fontsize{8pt}{9.6pt}
+\linespread{0.95}\selectfont
+
+%% Remove all paragraph spacing and indentation. In a CV, content is
+%% structured by sections and commands, not by paragraph flow, so
+%% default paragraph formatting would just waste space.
+\setlength{\parskip}{0pt}      %% No extra space between paragraphs
+\setlength{\parindent}{0pt}    %% No first-line indentation
+
+%% Configure all itemize (bullet) lists to be compact:
+%%   leftmargin=*   → auto-calculate minimal left margin
+%%   topsep=0pt     → no space above/below the list
+%%   itemsep=0pt    → no space between items
+%%   parsep=0pt     → no space between paragraphs within an item
+\setlist[itemize]{leftmargin=*,topsep=0pt,itemsep=0pt,parsep=0pt}
+
+%% =====================================================================
+%% LAYOUT DIMENSIONS — TWO-COLUMN CV GRID
+%% =====================================================================
+%% The CV uses a two-column layout: a narrow left column for section
+%% labels (e.g., "EDUCATION", "WORK EXPERIENCE") and a wide right
+%% column for the actual content. These three lengths define that grid.
+
+%% Left column width: holds the section label (e.g., "EDUCATION").
+%% 3.0cm is wide enough for most labels while leaving plenty of room
+%% for content on the right.
+\newlength{\lcolwidth}
+\setlength{\lcolwidth}{3.0cm}
+
+%% Gap between the left label column and the right content column.
+\newlength{\colgap}
+\setlength{\colgap}{0.3cm}
+
+%% Right column width: computed automatically as whatever space remains
+%% after subtracting the left column and the gap from the full text
+%% width. \dimexpr performs arithmetic on LaTeX dimensions.
+\newlength{\rcolwidth}
+\setlength{\rcolwidth}{\dimexpr\textwidth-\lcolwidth-\colgap\relax}
+
+%% Width of the right-side "date box" inside entries. This box holds
+%% the date range and location, centered as a unit. 5.2cm comfortably
+%% fits dates like "January 2022 - May 2022" with breathing room.
+\newlength{\dateboxwidth}
+\setlength{\dateboxwidth}{4.6cm}
+
+%% =====================================================================
+%% CUSTOM COMMANDS
+%% =====================================================================
+%% These commands are the building blocks of every CV section. They
+%% enforce consistent formatting so you never have to manually align
+%% columns or remember spacing values.
+
+%% ----- \cvrow{LABEL}{CONTENT} -----
+%% The fundamental two-column row. Places a bold label in the left
+%% column and arbitrary content in the right column.
+%%   #1 = Section label text (e.g., "EDUCATION", "WORK\\EXPERIENCE")
+%%        Use \\ inside the label for line breaks in multi-word labels.
+%%   #2 = Right-column content (can be anything: text, lists, tables)
+%%
+%% \parbox[t] creates a box with top-aligned text. This ensures the
+%% label and content align at the top even when the right column has
+%% many lines. \centering centers multi-line labels (like "SELECTED
+%% PUBLICATIONS") horizontally within the narrow left column.
+\newcommand{\cvrow}[2]{%
+  \noindent\parbox[t]{\lcolwidth}{\centering\textbf{#1}}%
+  \hspace{\colgap}%
+  \parbox[t]{\rcolwidth}{#2}%
+}
+
+%% ----- \cvrule -----
+%% A full-width horizontal rule to separate CV sections visually.
+%% 0.4pt is the line thickness; 4pt of vertical space is added above
+%% and below the rule for breathing room.
+\newcommand{\cvrule}{\vspace{4pt}\noindent\rule{\textwidth}{0.4pt}\vspace{4pt}}
+
+%% ----- \cventry{TITLE}{ORG}{DATE}{INSTITUTION}{LOCATION}{BULLETS} -----
+%% A structured entry for work experience, teaching, etc. Produces:
+%%   **Title** | Org                          Date
+%%   Institution                           Location
+%%   - bullet 1
+%%   - bullet 2
+%%
+%% The entry uses two side-by-side \parbox regions:
+%%   Left box  — title/org on line 1, institution on line 2
+%%   Right box — date on line 1, location on line 2, both centered
+%% The right box has a fixed width (\dateboxwidth) so dates and
+%% locations align as their own visual unit, centered relative to
+%% each other with breathing room from the title text.
+%%
+%%   #1 = Role/position title (rendered bold)
+%%   #2 = Organization or group name (after a pipe separator)
+%%   #3 = Date range (centered in right box)
+%%   #4 = Parent institution (e.g., "Georgia Institute of Technology")
+%%   #5 = Location (e.g., "Atlanta, GA")
+%%   #6 = Bullet points — must be \item entries (wrapped in itemize)
+\newcommand{\cventry}[6]{%
+  \noindent
+  \parbox[t]{\dimexpr\rcolwidth-\dateboxwidth-0.15cm\relax}{%
+    \raggedright\textbf{#1} | #2\\#4%
+  }%
+  \hfill
+  \parbox[t]{\dateboxwidth}{%
+    \raggedleft\begin{tabular}[t]{@{}c@{}}#3\\#5\end{tabular}%
+  }%
+  \vspace{2pt}%
+  \begin{itemize}#6\end{itemize}%
+}
+
+%% ----- \cventryplain{TITLE}{DATE}{INSTITUTION}{LOCATION}{BULLETS} -----
+%% Same as \cventry but WITHOUT the "| Org" separator. Use this when
+%% the role title stands alone (e.g., "Co-Founder and President of
+%% Puerto Rican Student Association" already includes the org name).
+%% Same two-box layout as \cventry — left for title/institution,
+%% right for centered date/location.
+%%
+%%   #1 = Role/position title (rendered bold)
+%%   #2 = Date range (centered in right box)
+%%   #3 = Parent institution
+%%   #4 = Location
+%%   #5 = Bullet points — must be \item entries
+\newcommand{\cventryplain}[5]{%
+  \noindent
+  \parbox[t]{\dimexpr\rcolwidth-\dateboxwidth-0.15cm\relax}{%
+    \raggedright\textbf{#1}\\#3%
+  }%
+  \hfill
+  \parbox[t]{\dateboxwidth}{%
+    \raggedleft\begin{tabular}[t]{@{}c@{}}#2\\#4\end{tabular}%
+  }%
+  \vspace{2pt}%
+  \begin{itemize}#5\end{itemize}%
+}
+
+%% ----- \cvaward{TITLE}{DATE}{DESCRIPTION} -----
+%% A compact entry for honors and awards. Produces:
+%%   **Title**                                              Date
+%%   Description text
+%%
+%%   #1 = Award name (rendered bold)
+%%   #2 = Date received (right-aligned)
+%%   #3 = Short description or context
+%% \\[1pt] adds a tiny 1pt vertical gap between the title line and
+%% the description. \par ends the paragraph and  adds
+%% space before the next award entry.
+\newcommand{\cvaward}[3]{%
+  \textbf{#1} \hfill #2\\[1pt]
+  #3\par\vspace{8pt}%
+}

@@ -1,0 +1,5 @@
+\cventryplain{Undergraduate Research Mentor}{August 2023 - May 2024}
+  {Stanford University}{Stanford, CA}{%
+  \item Mentored three undergraduate students on independent ML research projects
+  \item Guided students in Python, PyTorch, experiment design, and scientific writing
+}%

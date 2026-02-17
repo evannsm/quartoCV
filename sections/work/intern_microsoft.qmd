@@ -1,0 +1,6 @@
+\cventry{Research Intern}{Applied AI Research Group}{May 2021 - August 2021}
+  {Microsoft Research}{Redmond, WA}{%
+  \item Investigated few-shot learning techniques for code generation
+  \item Contributed to an internal tool for automated code review using transformer models
+  \item Collaborated with a team of 5 researchers on a publication submitted to NeurIPS
+}%

@@ -1,0 +1,9 @@
+\cvrow{{\fontsize{10.3pt}{11.0pt}\selectfont OPEN-SOURCE\\CONTRIBUTIONS}}{%
+  \vspace{-8pt}
+  \begin{itemize}
+  \item \textbf{ConformalLLM:} Developed and open-sourced a Python library for applying conformal prediction to large language model outputs; 500+ GitHub stars and adopted by two research groups.
+
+  \item \textbf{PyTorch Documentation:} Contributed tutorial improvements and bug fixes to the official PyTorch documentation and examples repository.
+
+  \end{itemize}%
+}

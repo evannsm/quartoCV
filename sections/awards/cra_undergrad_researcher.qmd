@@ -1,0 +1,2 @@
+\cvaward{CRA Outstanding Undergraduate Researcher Honorable Mention}{December 2021}
+  {National recognition for undergraduate research contributions in computer science}
