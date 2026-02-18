@@ -1,0 +1,69 @@
+---
+title: ""
+format:
+  pdf:
+    documentclass: article
+    pdf-engine: xelatex
+    papersize: letter
+    fontsize: 11pt
+    geometry:
+      - top=15mm
+      - left=14mm
+      - right=10mm
+      - bottom=15mm
+    colorlinks: true
+    linkcolor: blue
+    urlcolor: blue
+    include-in-header:
+      file: preamble.tex
+---
+
+{{< include sections/header.qmd >}}
+
+\vspace{28pt}
+
+{{< include sections/contact/default.qmd >}}
+
+\cvrule
+
+{{< include sections/technical_skills.qmd >}}
+
+\cvrule
+
+\cvrow{EDUCATION}{%
+{{< include sections/education/stanford.qmd >}}
+
+  \vspace{8pt}
+
+{{< include sections/education/uc_berkeley.qmd >}}
+}
+
+\cvrule
+
+\cvrow{WORK\\EXPERIENCE}{%
+{{< include sections/work/intern_microsoft.qmd >}}
+}
+
+\vspace{10pt}
+
+\cvrow{}{%
+{{< include sections/work/grad_ra_reliable_ai.qmd >}}
+}
+
+\cvrule
+
+\cvrow{SELECTED\\PUBLICATIONS}{%
+{{< include sections/publications/calibrated_uncertainty_icml.qmd >}}
+
+  \vspace{8pt}
+
+{{< include sections/publications/scaling_laws_neurips.qmd >}}
+}
+
+\cvrule
+
+\cvrow{HONORS AND\\AWARDS}{%
+{{< include sections/awards/knight_hennessy.qmd >}}
+
+{{< include sections/awards/best_paper_icml.qmd >}}
+}

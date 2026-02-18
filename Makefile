@@ -5,6 +5,9 @@ STAMPDIR := .rendered
 STAMPS := $(QMD:%.qmd=$(STAMPDIR)/%.stamp)
 OUTDIR := FinalProducts
 
+# All shared inputs — editing any of these triggers a rebuild of every document
+SECTIONS := $(wildcard sections/*.qmd) $(wildcard sections/*/*.qmd) preamble.tex
+
 .PHONY: all clean
 
 all: $(OUTDIR) $(STAMPDIR) $(STAMPS)
@@ -17,8 +20,10 @@ $(OUTDIR):
 $(STAMPDIR):
 	@mkdir -p $(STAMPDIR)
 
-# One stamp per qmd, stored in .rendered/
-$(STAMPDIR)/%.stamp: %.qmd | $(OUTDIR)
+# One stamp per root qmd.
+# Depends on the root qmd file AND all section/preamble files so that
+# editing any included content triggers the right rebuild.
+$(STAMPDIR)/%.stamp: %.qmd $(SECTIONS) | $(OUTDIR)
 	@echo "==> Rendering $<"
 	@$(QUARTO) render "$<"
 	@mv "$*.pdf" "$(OUTDIR)/"
