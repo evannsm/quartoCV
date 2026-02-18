@@ -39,33 +39,52 @@ That's it. `make` renders every root-level `.qmd` file and places the PDFs in `F
 
 ## How the Makefile Works
 
-The Makefile uses **stamp files** to track what has already been rendered, so re-running `make` only rebuilds documents that are actually out of date.
+The Makefile is smarter than a simple "render everything" script. It tracks exactly which source files each document depends on, so `make` only rebuilds what is actually out of date.
 
 ```
 make          # build all documents; skip anything already up to date
-make clean    # delete FinalProducts/ and all stamps (forces full rebuild on next make)
+make clean    # delete FinalProducts/ (forces full rebuild on next make)
 ```
 
 ### Dependency tracking
 
-Each document stamp depends on:
+The output PDFs in `FinalProducts/` are the Make targets. Make compares each PDF's timestamp against its prerequisites and rebuilds only if something is newer or missing.
 
-1. Its own root `.qmd` file (e.g. `QuartoCV.qmd`)
-2. **Every file in `sections/`** and `preamble.tex`
+At parse time, the Makefile greps every root `.qmd` for its `{{< include ... >}}` lines and uses those paths as that document's prerequisites. The result is a precise, per-document dependency graph:
 
-This means editing *any* section file — a single bullet point in a work entry, a new publication — will cause every document that could include it to be re-rendered on the next `make`. You never have to remember which documents use which sections.
+| What you edit | What gets rebuilt |
+|---|---|
+| A root `.qmd` (e.g. `QuartoCV.qmd`) | Only that document |
+| A section used by one document | Only that document |
+| A section shared by all documents (e.g. `sections/header.qmd`) | All documents |
+| `preamble.tex` | All documents (universal dependency) |
+| `FinalProducts/` deleted or a PDF removed | Only the missing PDFs |
 
-### Adding a new document
+You never have to remember which documents use which sections — Make figures it out automatically on every run.
 
-Just create a new root-level `.qmd` file:
+### Adding new files — no Makefile edits required
+
+**New root document:** just create a new `.qmd` in the project root.
 
 ```bash
 cp QuartoCV.qmd ResearchStatement.qmd
 # edit ResearchStatement.qmd as needed
-make   # picks it up automatically, renders to FinalProducts/ResearchStatement.pdf
+make   # picks it up automatically → FinalProducts/ResearchStatement.pdf
 ```
 
-The Makefile uses `$(wildcard *.qmd)` so new files are discovered without any Makefile edits.
+The Makefile uses `$(wildcard *.qmd)`, so new root documents are discovered automatically.
+
+**New section file:** create the `.qmd` anywhere inside `sections/`, then add an `{{< include sections/... >}}` line in whichever root documents should use it. The next `make` will include it in that document's dependency list and rebuild as needed.
+
+### What would break the dependency tracking
+
+The dependency scanner only understands Quarto's `{{< include path >}}` shortcode. The following would **not** be tracked automatically and would require manual intervention:
+
+- **Quarto project-level includes** configured in `_quarto.yml` instead of inline `{{< include >}}` directives
+- **Custom shortcodes or filters** that pull in external files
+- **`\input{}` or `\include{}`** from raw LaTeX blocks inside a `.qmd`
+
+If you use any of these, the affected documents may not rebuild when their inputs change. You can force a rebuild at any time with `make clean && make`.
 
 ## Building a CV and Resume from the Same Sections
 

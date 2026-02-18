@@ -1,35 +1,38 @@
-QUARTO ?= quarto
-QMD := $(wildcard *.qmd)
+QUARTO   ?= quarto
+QMD      := $(wildcard *.qmd)
+PREAMBLE := preamble.tex
 
-STAMPDIR := .rendered
-STAMPS := $(QMD:%.qmd=$(STAMPDIR)/%.stamp)
 OUTDIR := FinalProducts
+PDFS   := $(QMD:%.qmd=$(OUTDIR)/%.pdf)
 
-# All shared inputs — editing any of these triggers a rebuild of every document
-SECTIONS := $(wildcard sections/*.qmd) $(wildcard sections/*/*.qmd) preamble.tex
+# Extract the paths from every  {{< include ... >}}  line in a QMD file.
+# Usage: $(call qmd_includes, foo.qmd)
+qmd_includes = $(shell grep -oP '(?<=\{\{< include )[^ >]+' $(1) 2>/dev/null)
 
 .PHONY: all clean
 
-all: $(OUTDIR) $(STAMPDIR) $(STAMPS)
+all: $(OUTDIR) $(PDFS)
 
 # Ensure output directory exists
 $(OUTDIR):
 	@mkdir -p $(OUTDIR)
 
-# Ensure hidden stamp directory exists
-$(STAMPDIR):
-	@mkdir -p $(STAMPDIR)
+# Generate one explicit rule per top-level QMD.
+# The target IS the output PDF, so a missing FinalProducts/ (or missing PDF)
+# is enough to trigger a rebuild — no separate stamp files needed.
+# Each rule depends only on the sections that specific document includes,
+# so editing one section file only rebuilds the documents that use it.
+# preamble.tex is a universal dependency and rebuilds everything when changed.
+define PDF_RULE
+$(OUTDIR)/$(patsubst %.qmd,%,$(1)).pdf: $(1) $(PREAMBLE) $(call qmd_includes,$(1)) | $(OUTDIR)
+	@echo "==> Rendering $(1)"
+	@$(QUARTO) render "$(1)"
+	@mv "$(patsubst %.qmd,%,$(1)).pdf" "$(OUTDIR)/"
+endef
 
-# One stamp per root qmd.
-# Depends on the root qmd file AND all section/preamble files so that
-# editing any included content triggers the right rebuild.
-$(STAMPDIR)/%.stamp: %.qmd $(SECTIONS) | $(OUTDIR)
-	@echo "==> Rendering $<"
-	@$(QUARTO) render "$<"
-	@mv "$*.pdf" "$(OUTDIR)/"
-	@touch "$@"
+$(foreach qmd,$(QMD),$(eval $(call PDF_RULE,$(qmd))))
 
 clean:
-	@rm -rf $(STAMPDIR)
 	@rm -rf $(OUTDIR)
+	@rm -rf .rendered
 	@rm -f *.pdf *.html *.docx
