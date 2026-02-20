@@ -1,0 +1,6 @@
+\centry{Management \& Technology Summer Institute}{Residential Teaching Assistant}{Philadelphia, PA}{July 20xx - August 20xx}
+\begin{itemize}
+  \item Supervised 50 high-achieving high-school students through completion of college course in Engineering Entrepreneurship that involved thinking of a technology-related business idea and creating an associated market plan
+  \item Advised students on appropriate business plans for their product concepts and discussed getting to market strategies for prototypes
+  \item Facilitated successful construction of product prototypes by acting as technical resource in lab
+\end{itemize}

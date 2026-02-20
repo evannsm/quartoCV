@@ -1,0 +1,53 @@
+---
+title: ""
+format:
+  pdf:
+    documentclass: article
+    pdf-engine: xelatex
+    papersize: letter
+    fontsize: 10pt
+    geometry:
+      - top=9mm
+      - left=12mm
+      - right=12mm
+      - bottom=8mm
+    colorlinks: true
+    linkcolor: blue
+    urlcolor: blue
+    include-in-header:
+      file: preamble_consulting.tex
+---
+
+{{< include sections/consulting/header.qmd >}}
+
+\csection{EDUCATION}
+
+{{< include sections/consulting/education/upenn.qmd >}}
+
+{{< include sections/consulting/education/dubai_college.qmd >}}
+
+\csection{PROFESSIONAL EXPERIENCE}
+
+{{< include sections/consulting/work/wharton_sbdc.qmd >}}
+
+{{< include sections/consulting/work/mtsi.qmd >}}
+
+\csection{LEADERSHIP EXPERIENCE}
+
+{{< include sections/consulting/leadership/penn_cricket.qmd >}}
+
+{{< include sections/consulting/leadership/dubai_college_head_boy.qmd >}}
+
+{{< include sections/consulting/leadership/uae_cricket_team.qmd >}}
+
+\csection{HONORS AND AWARDS}
+
+{{< include sections/consulting/awards/pennapps.qmd >}}
+
+{{< include sections/consulting/awards/penn_cricket_club.qmd >}}
+
+{{< include sections/consulting/awards/dubai_college_cricket.qmd >}}
+
+\csection{SKILLS AND INTERESTS}
+
+{{< include sections/consulting/skills.qmd >}}

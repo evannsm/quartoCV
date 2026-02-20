@@ -1,0 +1,7 @@
+\vspace{2pt}
+\noindent\textbf{University of Pennsylvania,} \textit{Jerome Fisher Program in Management and Technology}\hfill Philadelphia, PA\par
+\begin{itemize}
+  \item \textit{School of Engineering and Applied Science:} BSE in Computer Science, Minor in Mathematics \hfill May 20xx
+  \item \textit{The Wharton School:} BS in Economics, Concentrations in Finance and Management \hfill May 20xx
+  \item \textit{Cumulative GPA:} 3.72/4.00 $|$ \textit{Honors:} Wharton Dean's List \& Engineering Dean's List (May 20xx)
+\end{itemize}

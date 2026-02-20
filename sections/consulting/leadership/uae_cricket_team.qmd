@@ -1,0 +1,6 @@
+\centry{UAE U-19 National Cricket Team}{Vice-Captain}{Dubai, U.A.E.}{February 20xx - May 20xx}
+\begin{itemize}
+  \item Selected by coaching staff to assist captain with on-field leadership
+  \item Supported captain with organizational duties and input for tactical decision-making
+  \item Captained Dubai College Senior Cricket Team involving tactical decision-making and motivational abilities
+\end{itemize}

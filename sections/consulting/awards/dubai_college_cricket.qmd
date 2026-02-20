@@ -1,0 +1,4 @@
+\centrynorole{Dubai College Cricket}{Dubai, U.A.E.}{January 20xx - May 20xx}
+\begin{itemize}
+  \item Recognized 4x MVP DC Senior Team (20xx-20xx), UAE U-17 National Cricket Team Player (20xx)
+\end{itemize}

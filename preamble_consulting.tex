@@ -1,0 +1,140 @@
+%% =====================================================================
+%% preamble_consulting.tex
+%% Consulting / industry-style résumé preamble (XeLaTeX).
+%%
+%% Produces a single-column layout with standard margins, centered
+%% name/contact header, and full-width bold section headings
+%% (EDUCATION, PROFESSIONAL EXPERIENCE, etc.) underlined by a rule —
+%% the format used by MBA and consulting recruiting résumés.
+%%
+%% This is a companion to preamble.tex (the academic two-column style).
+%% Both produce PDFs from the same sections/ content files where
+%% applicable; the consulting-specific content lives in sections/consulting/.
+%%
+%% To change the font, replace the argument to \setmainfont below.
+%% =====================================================================
+
+%% =====================================================================
+%% FONT CONFIGURATION
+%% =====================================================================
+\usepackage{fontspec}
+\usepackage{anyfontsize}
+\setmainfont{Times New Roman}   %% ← change to any system font
+\AtBeginDocument{\fontsize{10.5}{11.8}\selectfont}  %% ← 9pt body, 10.5pt leading
+
+%% =====================================================================
+%% PAGE STYLE
+%% =====================================================================
+%% Suppress page numbers — standard for résumés.
+\pagestyle{empty}
+
+%% =====================================================================
+%% HYPERLINKS
+%% =====================================================================
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks = true,
+  urlcolor   = blue,
+  linkcolor  = blue
+}
+
+%% =====================================================================
+%% SPACING
+%% =====================================================================
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+%% =====================================================================
+%% LIST FORMATTING
+%% =====================================================================
+%% Compact bullet lists: no extra spacing above, below, or between items.
+\usepackage{enumitem}
+\setlist[itemize]{topsep=1pt, itemsep=0pt, parsep=0pt, leftmargin=15pt}
+
+%% =====================================================================
+%% PACKAGES
+%% =====================================================================
+%% tabular* is used in sections/consulting/education/dubai_college.qmd.
+\usepackage{array}
+
+%% =====================================================================
+%% CUSTOM COMMANDS
+%% =====================================================================
+
+%% ----- \csection{TITLE} -----
+%% Full-width rule above the section heading, with the bold title just below.
+%% More space after the title before the first entry.
+%%
+%%   Example:  \csection{PROFESSIONAL EXPERIENCE}
+\newcommand{\csection}[1]{%
+  \vspace{5pt}%
+  \noindent\textbf{#1}\\[-8pt]%
+  \rule{\textwidth}{0.5pt}\par%
+  \vspace{1pt}%
+}
+
+%% ----- \centry{Org}{Role}{Location}{Date} -----
+%% Standard entry header for work experience, leadership, and awards.
+%% Org is bold, Role is italic, Location is plain, Date is right-aligned.
+%% Uses \hfill so long entry text degrades gracefully without crowding
+%% the date (unlike a tabular* which collapses when text overflows).
+%%
+%%   Example:
+%%     \centry{Microsoft Research}{Research Intern}{Redmond, WA}{May--Aug 2021}
+%%     \begin{itemize}
+%%       \item ...
+%%     \end{itemize}
+\newcommand{\centry}[4]{%
+  \vspace{2pt}%
+  \noindent\textbf{#1,} \textit{#2,} #3\hfill\mbox{#4}\par%
+}
+
+%% ----- \ceduentry{Org}{Program}{Location}{Date} -----
+%% Education entry. Org is bold, Program (degree/concentration) is italic.
+%% Location and Date appear on the right.
+%%
+%%   Example:
+%%     \ceduentry{Stanford University}{Ph.D. in Computer Science}{Stanford, CA}{Aug 2022--Present}
+\newcommand{\ceduentry}[4]{%
+  \vspace{2pt}%
+  \noindent\textbf{#1,} \textit{#2}\hfill\mbox{#3 \quad #4}\par%
+}
+
+%% ----- \cawardentry{Award}{Context}{Date} -----
+%% Compact award / honor entry. Award name is bold, Context is italic,
+%% Date is right-aligned.
+%%
+%%   Example:
+%%     \cawardentry{Best Paper Award}{ICML Reliable ML Workshop}{July 2024}
+\newcommand{\cawardentry}[3]{%
+  \vspace{2pt}%
+  \noindent\textbf{#1,} \textit{#2}\hfill\mbox{#3}\par%
+}
+
+%% ----- \ceduentrytwo{Org}{Program}{Location}{Date1}{Date2} -----
+%% Education entry with two graduation dates on the right (same line) —
+%% used for dual-degree programs where each degree has its own date.
+%%
+%%   Example:
+%%     \ceduentrytwo{University of Pennsylvania}
+%%       {Jerome Fisher Program in Management and Technology}
+%%       {Philadelphia, PA}{May 20xx}{May 20xx}
+\newcommand{\ceduentrytwo}[5]{%
+  \vspace{2pt}%
+  \noindent\textbf{#1,} \textit{#2}\hfill\mbox{#3 \quad #4\,/\,#5}\par%
+}
+
+%% ----- \centrynorole{Org}{Location}{Date} -----
+%% Entry header without a role/title — used where only the org name
+%% is listed (e.g., award sub-entries like "Penn Cricket Club, Philly, PA").
+%% Org is bold, Location is plain, Date is right-aligned.
+%%
+%%   Example:
+%%     \centrynorole{Penn Cricket Club}{Philadelphia, PA}{August 20xx - Present}
+%%     \begin{itemize}
+%%       \item Selected as MVP ...
+%%     \end{itemize}
+\newcommand{\centrynorole}[3]{%
+  \vspace{2pt}%
+  \noindent\textbf{#1,} #2\hfill\mbox{#3}\par%
+}

@@ -1,0 +1,4 @@
+\centrynorole{Penn Cricket Club}{Philadelphia, PA}{August 20xx - Present}
+\begin{itemize}
+  \item Selected as MVP American College Cricket Ivy League Championship (20xx)
+\end{itemize}

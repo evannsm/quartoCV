@@ -1,0 +1,5 @@
+\begin{itemize}[label={},leftmargin=0pt,topsep=0pt,itemsep=0pt,parsep=0pt]
+  \item \textbf{Language:} Conversational French
+  \item \textbf{Computer Skills:} Fluent in Java; proficient in C, OCaml and Arduino; familiar with Python; proficient in Microsoft Office Suite
+  \item \textbf{Interests:} Basketball $|$ Squash $|$ Soccer $|$ Badminton $|$ Gaming
+\end{itemize}

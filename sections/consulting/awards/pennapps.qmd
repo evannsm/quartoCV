@@ -1,0 +1,5 @@
+\centry{PennApps}{`Best Use of Plaid API' Prize Winner}{Philadelphia, PA}{September 20xx}
+\begin{itemize}
+  \item Developed back-end of \textit{Pava}, an interactive website that displays bank statements based on importance and interest of transactions rather than chronology, with two other team members
+  \item Employed Stochastic Gradient Descent on training set of data to predict interest level of new transactions
+\end{itemize}

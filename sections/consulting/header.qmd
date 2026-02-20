@@ -1,0 +1,6 @@
+\begin{center}
+  {\fontsize{18pt}{21.6pt}\selectfont\textbf{Matt Smith}}\\[3pt]
+  \href{mailto:student@wharton.upenn.edu}{student@wharton.upenn.edu} $|$ (919) 555-1212\\[2pt]
+  \textbf{School Address:} Harnwell College House, 3820 Locust Walk MB 261, Philadelphia, PA 19104\\[1pt]
+  \textbf{Permanent Address:} 11 Palm Lane, Umm Suqeim 3, Dubai, U.A.E.
+\end{center}

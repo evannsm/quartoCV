@@ -1,14 +1,29 @@
 # QuartoCV
 
-A clean, professional academic CV template built with [Quarto](https://quarto.org/) and LaTeX. Uses a modular file structure with separate `.qmd` files for each section, making it easy to add, remove, or reorder entries — and to produce both a full CV and a focused resume from the same shared content.
+A clean, professional CV/resume template built with [Quarto](https://quarto.org/) and LaTeX. Uses a modular file structure with separate `.qmd` files for each section, making it easy to add, remove, or reorder entries — and to produce multiple document styles from the same shared content.
 
 ![Quarto](https://img.shields.io/badge/Quarto-PDF-blue)
 ![LaTeX](https://img.shields.io/badge/Engine-XeLaTeX-green)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 
+## Two Styles Included
+
+This repo ships with two distinct visual formats:
+
+| Style | Preamble | Root document(s) | Best for |
+|---|---|---|---|
+| **Academic** | `preamble.tex` | `QuartoCV.qmd`, `QuartoResume.qmd` | Academic job market, fellowships, research roles |
+| **Consulting** | `preamble_consulting.tex` | `ConsultingResume.qmd` | MBA recruiting, consulting, industry applications |
+
+The **academic style** uses a compact two-column layout: bold section labels on the left (EDUCATION, WORK EXPERIENCE, …) and content on the right, with tight 8pt body text and narrow margins — optimized for fitting a lot on one page.
+
+The **consulting style** uses a standard single-column layout: centered name/contact header, full-width bold section headings underlined by a rule, and entry headers that put bold organization + italic role on the left and a right-aligned date — the format used by MBA and consulting recruiting résumés.
+
+Both styles render from the same `make` command and use the same modular `sections/` architecture.
+
 ## Preview
 
-Render the template to see a complete example CV with fictional data. The output is a polished, single-page (or multi-page) PDF ready for academic job applications, fellowship submissions, or conference bios.
+Run `make` on a fresh clone to produce example PDFs with fictional data (John Smith, Stanford PhD). The output is a polished PDF ready to use as a starting point.
 
 ## Prerequisites
 
@@ -28,18 +43,21 @@ Render the template to see a complete example CV with fictional data. The output
 git clone https://github.com/YOUR_USERNAME/QuartoCV.git
 cd QuartoCV
 
-# Build everything (CV + Resume → FinalProducts/)
+# Build all three example documents → FinalProducts/
 make
+
+# Build only the consulting resume
+make FinalProducts/ConsultingResume.pdf
 
 # Remove all build artifacts for a clean rebuild
 make clean
 ```
 
-That's it. `make` renders every root-level `.qmd` file and places the PDFs in `FinalProducts/`.
+`make` renders every root-level `.qmd` file and places the PDFs in `FinalProducts/`.
 
 ## How the Makefile Works
 
-The Makefile is smarter than a simple "render everything" script. It tracks exactly which source files each document depends on, so `make` only rebuilds what is actually out of date.
+The Makefile tracks exactly which source files each document depends on, so `make` only rebuilds what is actually out of date.
 
 ```
 make          # build all documents; skip anything already up to date
@@ -50,26 +68,27 @@ make clean    # delete FinalProducts/ (forces full rebuild on next make)
 
 The output PDFs in `FinalProducts/` are the Make targets. Make compares each PDF's timestamp against its prerequisites and rebuilds only if something is newer or missing.
 
-At parse time, the Makefile greps every root `.qmd` for its `{{< include ... >}}` lines and uses those paths as that document's prerequisites. The result is a precise, per-document dependency graph:
+At parse time, the Makefile greps every root `.qmd` for its `{{< include ... >}}` lines (sections) and its `include-in-header: file:` line (preamble). The result is a precise, per-document dependency graph:
 
 | What you edit | What gets rebuilt |
 |---|---|
-| A root `.qmd` (e.g. `QuartoCV.qmd`) | Only that document |
-| A section used by one document | Only that document |
-| A section shared by all documents (e.g. `sections/header.qmd`) | All documents |
-| `preamble.tex` | All documents (universal dependency) |
+| A root `.qmd` (e.g. `ConsultingResume.qmd`) | Only that document |
+| A consulting section (e.g. `sections/consulting/work/...`) | Only `ConsultingResume.pdf` |
+| A section shared by multiple documents | Only the documents that include it |
+| `preamble.tex` | Only academic-style documents |
+| `preamble_consulting.tex` | Only `ConsultingResume.pdf` |
 | `FinalProducts/` deleted or a PDF removed | Only the missing PDFs |
 
-You never have to remember which documents use which sections — Make figures it out automatically on every run.
+You never have to remember which documents use which sections or preambles — Make figures it out automatically on every run.
 
 ### Adding new files — no Makefile edits required
 
 **New root document:** just create a new `.qmd` in the project root.
 
 ```bash
-cp QuartoCV.qmd ResearchStatement.qmd
-# edit ResearchStatement.qmd as needed
-make   # picks it up automatically → FinalProducts/ResearchStatement.pdf
+cp ConsultingResume.qmd MyResume.qmd
+# edit MyResume.qmd as needed
+make   # picks it up automatically → FinalProducts/MyResume.pdf
 ```
 
 The Makefile uses `$(wildcard *.qmd)`, so new root documents are discovered automatically.
@@ -78,94 +97,123 @@ The Makefile uses `$(wildcard *.qmd)`, so new root documents are discovered auto
 
 ### What would break the dependency tracking
 
-The dependency scanner only understands Quarto's `{{< include path >}}` shortcode. The following would **not** be tracked automatically and would require manual intervention:
+The dependency scanner only understands Quarto's `{{< include path >}}` shortcode and the `include-in-header: file:` YAML field. The following would **not** be tracked automatically:
 
-- **Quarto project-level includes** configured in `_quarto.yml` instead of inline `{{< include >}}` directives
+- **Quarto project-level includes** configured in `_quarto.yml`
 - **Custom shortcodes or filters** that pull in external files
 - **`\input{}` or `\include{}`** from raw LaTeX blocks inside a `.qmd`
 
-If you use any of these, the affected documents may not rebuild when their inputs change. You can force a rebuild at any time with `make clean && make`.
+Force a full rebuild at any time with `make clean && make`.
 
-## Building a CV and Resume from the Same Sections
+## Building Multiple Documents from the Same Sections
 
-The most practical use of this template is maintaining both a full academic CV and a shorter industry resume, with **all content living in one place**.
+The most practical use of this template is maintaining several document variants — a full CV, an academic resume, a consulting resume — with **all content living in one place**.
 
-This repository ships with two documents as a working example:
+This repository ships with three documents as working examples:
 
 | File | Output | What it includes |
 |---|---|---|
 | `QuartoCV.qmd` | `FinalProducts/QuartoCV.pdf` | Every section — the full academic CV |
-| `Resume.qmd` | `FinalProducts/Resume.pdf` | A focused subset for industry applications |
+| `QuartoResume.qmd` | `FinalProducts/QuartoResume.pdf` | Focused academic resume (subset of sections) |
+| `ConsultingResume.qmd` | `FinalProducts/ConsultingResume.pdf` | Consulting-format résumé (different style + sections) |
 
-`Resume.qmd` omits sections that are less relevant for industry (service, open-source, research interests) and trims the publications and awards lists to the two strongest entries. Everything it does include is pulled from the exact same `sections/` files as the CV — no duplication.
+`QuartoResume.qmd` omits sections less relevant for industry (service, open-source, research interests) and trims publications and awards. Everything it includes is pulled from the same `sections/` files as `QuartoCV.qmd` — no duplication.
 
-Running `make` produces both PDFs in one command. When you update a section — say, you add a bullet to a work entry — both documents are rebuilt automatically on the next `make`.
+`ConsultingResume.qmd` uses `preamble_consulting.tex` and its own `sections/consulting/` files. The data is the same fictional person (John Smith), letting you compare both styles side by side before adapting to your own content.
 
-### How to create your own resume variant
+### How to create your own consulting resume variant
 
-1. Copy one of the existing root documents as a starting point:
+1. Copy the consulting root document:
    ```bash
-   cp QuartoCV.qmd Resume.qmd
+   cp ConsultingResume.qmd MyConsultingResume.qmd
    ```
 
-2. Open `Resume.qmd` and delete the `{{< include >}}` lines for sections you want to omit (service, research interests, older awards, etc.).
+2. Open `MyConsultingResume.qmd` and remove any `{{< include >}}` lines for sections you don't need.
 
-3. Trim entries within a section by simply removing individual `{{< include >}}` lines — the remaining entries in `sections/` are untouched and still appear in `QuartoCV.qmd`.
+3. Edit the section files under `sections/consulting/` to replace the placeholder content with your own. Each file is a small, self-contained LaTeX snippet.
 
-4. Run `make`. Both PDFs appear in `FinalProducts/`.
+4. Run `make`. The new PDF appears in `FinalProducts/`.
 
-No content is ever duplicated. Updating a bullet point in `sections/work/intern_microsoft.qmd` flows into every document that includes it.
+### How to create your own academic CV variant
+
+1. Copy an existing root document:
+   ```bash
+   cp QuartoCV.qmd MyCV.qmd
+   ```
+
+2. Add or remove `{{< include >}}` lines for sections, or reorder them.
+
+3. Run `make`.
+
+No content is ever duplicated. Updating a bullet point in `sections/consulting/work/intern_microsoft.qmd` flows automatically into every document that includes it.
 
 ## Project Structure
 
 ```
 QuartoCV/
-├── Makefile               # Build system — run `make` to produce all PDFs
-├── QuartoCV.qmd           # Full academic CV (assembles all sections)
-├── Resume.qmd             # Focused resume (subset of sections)
-├── preamble.tex           # LaTeX preamble (fonts, spacing, custom commands)
+├── Makefile                    # Build system — run `make` to produce all PDFs
+│
+├── QuartoCV.qmd                # Full academic CV (assembles all sections)
+├── QuartoResume.qmd            # Focused academic resume (subset of sections)
+├── ConsultingResume.qmd        # Consulting-style résumé (different layout)
+│
+├── preamble.tex                # Academic style: two-column layout, 8pt compact
+├── preamble_consulting.tex     # Consulting style: single-column, standard margins
+│
 ├── README.md
-├── FinalProducts/         # All rendered PDFs appear here (git-ignored)
+├── FinalProducts/              # All rendered PDFs appear here (git-ignored)
+│
 └── sections/
-    ├── header.qmd                          # Name, title, and institution banner
-    ├── technical_skills.qmd                # Categorized skills list
-    ├── research_interests.qmd              # Two-column research interests
-    ├── opensource.qmd                      # Open-source contributions
+    │
+    │   ── Academic-style sections ──────────────────────────────────────────
+    ├── header.qmd                           # Name, title, institution banner
+    ├── technical_skills.qmd                 # Categorized skills list
+    ├── research_interests.qmd               # Two-column research interests
+    ├── opensource.qmd                       # Open-source contributions
     ├── contact/
-    │   └── default.qmd                     # Contact info (email, GitHub, LinkedIn, etc.)
+    │   └── default.qmd                      # Contact info
     ├── education/
-    │   ├── stanford.qmd                    # PhD entry
-    │   └── uc_berkeley.qmd                 # Undergrad entry
+    │   ├── stanford.qmd                     # PhD entry
+    │   └── uc_berkeley.qmd                  # Undergrad entry
     ├── work/
-    │   ├── grad_ra_reliable_ai.qmd         # Graduate Research Assistant
-    │   ├── ta_machine_learning.qmd         # Teaching Assistant
-    │   └── intern_microsoft.qmd            # Research Intern
+    │   ├── grad_ra_reliable_ai.qmd          # Graduate Research Assistant
+    │   ├── ta_machine_learning.qmd          # Teaching Assistant
+    │   └── intern_microsoft.qmd             # Research Intern
     ├── publications/
-    │   ├── calibrated_uncertainty_icml.qmd  # ICML paper
-    │   ├── efficient_finetuning_pami.qmd   # PAMI submission
-    │   └── scaling_laws_neurips.qmd        # NeurIPS paper
+    │   ├── calibrated_uncertainty_icml.qmd
+    │   ├── efficient_finetuning_pami.qmd
+    │   └── scaling_laws_neurips.qmd
     ├── service/
-    │   ├── cs_council_president.qmd        # Student org leadership
-    │   └── undergrad_mentor.qmd            # Mentoring role
-    └── awards/
-        ├── best_paper_icml.qmd             # Best paper award
-        ├── knight_hennessy.qmd             # Fellowship
-        ├── summa_cum_laude.qmd             # Latin honors
-        └── cra_undergrad_researcher.qmd    # Research award
+    │   ├── cs_council_president.qmd
+    │   └── undergrad_mentor.qmd
+    ├── awards/
+    │   ├── best_paper_icml.qmd
+    │   ├── knight_hennessy.qmd
+    │   ├── summa_cum_laude.qmd
+    │   └── cra_undergrad_researcher.qmd
+    │
+    └── consulting/              ── Consulting-style sections ────────────────
+        ├── header.qmd                       # Centered name + contact block
+        ├── skills.qmd                       # Skills and interests line items
+        ├── education/
+        │   ├── stanford.qmd                 # PhD entry (consulting format)
+        │   └── uc_berkeley.qmd              # Undergrad entry (consulting format)
+        ├── work/
+        │   ├── grad_ra_reliable_ai.qmd      # Graduate RA (consulting format)
+        │   └── intern_microsoft.qmd         # Intern (consulting format)
+        ├── leadership/
+        │   ├── cs_council_president.qmd     # Student org leadership
+        │   └── undergrad_mentor.qmd         # Mentoring role
+        └── awards/
+            ├── best_paper_icml.qmd          # Best paper award
+            └── knight_hennessy.qmd          # Fellowship
 ```
-
-Each section lives in its own `.qmd` file. Root documents pull them together using Quarto's `{{< include >}}` directive. This makes it easy to:
-
-- **Add an entry:** Create a new `.qmd` file in the appropriate subdirectory, then add an `{{< include >}}` line in whichever root documents should show it.
-- **Remove an entry:** Delete or comment out the `{{< include >}}` line.
-- **Reorder sections:** Move the `{{< include >}}` lines around in the root document.
-- **Produce a resume:** Create a new root `.qmd` that includes only the sections you want.
 
 ## Customization Guide
 
 ### Changing the Font
 
-In `preamble.tex`, find the `\setmainfont` line and replace the font name:
+Both preambles use `\setmainfont`. Find the line and replace the font name:
 
 ```latex
 \setmainfont{Times New Roman}   %% ← change to any system font
@@ -173,20 +221,11 @@ In `preamble.tex`, find the `\setmainfont` line and replace the font name:
 
 Popular alternatives: `EB Garamond`, `Libertinus Serif`, `Palatino`, `Georgia`.
 
-### Adjusting Font Sizes
-
-Two font sizes matter:
-
-| Setting | Location | Default | Effect |
-|---|---|---|---|
-| `fontsize` | YAML front matter (`QuartoCV.qmd`) | `11pt` | Base size for LaTeX (affects heading scaling) |
-| `\fontsize{8pt}{9.6pt}` | `preamble.tex` | 8pt / 9.6pt baseline | Actual body text size (overrides base) |
-| Header name/title | `sections/header.qmd` `\fontsize{18.0pt}{...}` | 18pt | Name and title banner |
-
 ### Adjusting Margins
 
 Modify the `geometry` list in the root `.qmd`:
 
+**Academic style** (very compact):
 ```yaml
 geometry:
   - top=15mm
@@ -195,44 +234,20 @@ geometry:
   - bottom=15mm
 ```
 
-### Adding / Removing Sections
-
-Every section follows the same pattern in the root `.qmd`:
-
-```
-\cvrow{SECTION\\LABEL}{
-  {{< include sections/category/entry.qmd >}}
-}
-
-\cvrule
+**Consulting style** (standard):
+```yaml
+geometry:
+  - top=18mm
+  - left=18mm
+  - right=18mm
+  - bottom=18mm
 ```
 
-Copy an existing section block, change the label, point to your new section file, and fill in your content. Delete any section you don't need.
-
-### Adding Entries Within a Section
-
-The **first** entry in a section uses `\cvrow{LABEL}{...}`. All **subsequent** entries use `\cvrow{}{...}` (empty left column) so the label appears only once. Add `\vspace{10pt}` between entries for spacing.
-
-To add a new work experience entry, for example:
-
-1. Create `sections/work/my_new_role.qmd` with a `\cventry{...}` block.
-2. Add the following to the root `.qmd` after the last work entry:
-   ```
-   \vspace{10pt}
-
-   \cvrow{}{%
-   {{< include sections/work/my_new_role.qmd >}}
-   }
-   ```
-3. Run `make` — the new entry appears in every document that includes the work section.
-
-## Custom LaTeX Commands
-
-The template defines four commands in `preamble.tex`. You never need to write raw LaTeX layout code — just use these:
+## Custom LaTeX Commands — Academic Style (`preamble.tex`)
 
 ### `\cvrow{LABEL}{CONTENT}`
 
-The fundamental two-column row. Places a bold, centered label in the left column and arbitrary content in the right column.
+The fundamental two-column row. Bold section label on the left, content on the right.
 
 ```latex
 \cvrow{EDUCATION}{%
@@ -243,7 +258,7 @@ The fundamental two-column row. Places a bold, centered label in the left column
 
 ### `\cventry{TITLE}{ORG}{DATE}{INSTITUTION}{LOCATION}{BULLETS}`
 
-A structured entry for work experience, teaching, etc. Produces a two-line header (title|org + institution) with right-aligned date/location, followed by bullet points.
+Structured entry for work experience. Two-line header with right-aligned date/location, followed by bullets.
 
 ```latex
 \cventry{Graduate Research Assistant}{AI Lab}{Aug 2022 - Present}
@@ -255,27 +270,66 @@ A structured entry for work experience, teaching, etc. Produces a two-line heade
 
 ### `\cventryplain{TITLE}{DATE}{INSTITUTION}{LOCATION}{BULLETS}`
 
-Same as `\cventry` but **without** the `| Org` separator. Use when the title already includes the organization name.
-
-```latex
-\cventryplain{President of CS Graduate Council}{Aug 2023 - Present}
-  {Stanford University}{Stanford, CA}{%
-  \item Led student advocacy efforts
-}
-```
+Same as `\cventry` but without the `| Org` separator.
 
 ### `\cvaward{TITLE}{DATE}{DESCRIPTION}`
 
-A compact entry for honors and awards. Bold title with right-aligned date, followed by a description line.
-
-```latex
-\cvaward{Best Paper Award}{July 2024}
-  {Recognized for novel contributions to the field}
-```
+Compact award entry: bold title, right-aligned date, description below.
 
 ### `\cvrule`
 
-A full-width horizontal rule to visually separate sections. Just write `\cvrule` between sections.
+Full-width horizontal rule to visually separate sections.
+
+## Custom LaTeX Commands — Consulting Style (`preamble_consulting.tex`)
+
+### `\csection{TITLE}`
+
+Full-width bold section heading with a horizontal rule below. Write the title in all caps.
+
+```latex
+\csection{PROFESSIONAL EXPERIENCE}
+```
+
+### `\centry{Org}{Role}{Location}{Date}`
+
+Standard entry header: bold org, italic role, plain location, right-aligned date. Follow with an `itemize` list for bullets.
+
+```latex
+\centry{Microsoft Research}{Research Intern}{Redmond, WA}{May--Aug 2021}
+\begin{itemize}
+  \item Investigated few-shot learning techniques for code generation
+\end{itemize}
+```
+
+### `\ceduentry{Org}{Program}{Location}{Date}`
+
+Education entry. Org is bold, Program (degree name) is italic. Location and date appear together on the right.
+
+```latex
+\ceduentry{Stanford University}{Ph.D. in Computer Science}{Stanford, CA}{Aug 2022--Present}
+\begin{itemize}
+  \item GPA: 4.0/4.0 \quad Advisor: Dr. Alice Johnson
+\end{itemize}
+```
+
+### `\cawardentry{Award}{Context}{Date}`
+
+Award/honor entry: bold award name, italic context (awarding body or descriptor), right-aligned date.
+
+```latex
+\cawardentry{Best Paper Award}{ICML Reliable ML Workshop}{July 2024}
+\begin{itemize}
+  \item Recognized for novel contributions to uncertainty quantification
+\end{itemize}
+```
+
+### Adding entries in the consulting style
+
+To add a new entry to any section, create a `.qmd` file in `sections/consulting/<category>/` using the appropriate command, then add an `{{< include >}}` line in `ConsultingResume.qmd`:
+
+```latex
+{{< include sections/consulting/work/my_new_role.qmd >}}
+```
 
 ## License
 

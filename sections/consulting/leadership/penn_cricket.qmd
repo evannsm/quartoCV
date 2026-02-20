@@ -1,0 +1,6 @@
+\centry{Penn Cricket Club}{Vice-President}{Philadelphia, PA}{August 20xx - Present}
+\begin{itemize}
+  \item Elected by other board members to promote growth and success of club at Penn
+  \item Coordinated weekly training sessions to develop players' skills and assisted with team selection
+  \item Worked to increase campus awareness of club and gain recognition for its achievements as Penn's most successful sports club between 20xx and 20xx
+\end{itemize}

@@ -1,0 +1,6 @@
+\centry{Wharton Small Business Development Center}{Consultant}{Philadelphia, PA}{October 20xx - Present}
+\begin{itemize}
+  \item Consulted for real estate appraisal management software company (\$7MM annual sales revenue) and identified potential growth opportunities for diversification in revenue streams
+  \item Analyzed market space for commercial real estate appraisal management software industry and estimated an upper bound for potential revenue generation for new product in this space (\$30MM annual revenue)
+  \item Developed Excel interactive sales tool to communicate economic value to customer given set of inputs, such as cost of appraisals and cost of Full Time Equivalents (FTEs)
+\end{itemize}

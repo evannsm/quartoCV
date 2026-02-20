@@ -1,0 +1,5 @@
+\centry{Dubai College}{Deputy Head Boy}{Dubai, U.A.E.}{May 20xx - May 20xx}
+\begin{itemize}
+  \item Elected by 100 staff and 120 students as leader of Senior Student Body due to outstanding academic achievement, social involvement, and sporting excellence
+  \item Managed multiple administrative duties and was highly involved with academic changes in school, particularly those involving student life
+\end{itemize}

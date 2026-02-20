@@ -1,0 +1,9 @@
+\vspace{2pt}
+\noindent\begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}
+  \textbf{Dubai College (High School)} & Dubai, U.A.E. \\
+\end{tabular*}
+\begin{itemize}
+  \item \textit{SAT Scores:} Math 780 $|$ Writing 760 $|$ Reading 730 \hfill June 20xx
+  \item \textit{A Levels:} Mathematics A* (581/600), Physics A* (597/600), Chemistry A* (594/600), Economics A* (396/400)
+  \item \textit{AS Levels:} Further Mathematics A (290/300)
+\end{itemize}
