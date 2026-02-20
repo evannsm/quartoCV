@@ -103,7 +103,7 @@
 %% many lines. \centering centers multi-line labels (like "SELECTED
 %% PUBLICATIONS") horizontally within the narrow left column.
 \newcommand{\cvrow}[2]{%
-  \noindent\parbox[t]{\lcolwidth}{\centering\textbf{#1}}%
+  \noindent\parbox[t]{\lcolwidth}{\raggedright\textbf{#1}}%
   \hspace{\colgap}%
   \parbox[t]{\rcolwidth}{#2}%
 }
@@ -141,7 +141,7 @@
   }%
   \hfill
   \parbox[t]{\dateboxwidth}{%
-    \raggedleft\begin{tabular}[t]{@{}c@{}}#3\\#5\end{tabular}%
+    \raggedleft\begin{tabular}[t]{@{}r@{}}#3\\#5\end{tabular}%
   }%
   \vspace{2pt}%
   \begin{itemize}#6\end{itemize}%
@@ -166,7 +166,7 @@
   }%
   \hfill
   \parbox[t]{\dateboxwidth}{%
-    \raggedleft\begin{tabular}[t]{@{}c@{}}#2\\#4\end{tabular}%
+    \raggedleft\begin{tabular}[t]{@{}r@{}}#2\\#4\end{tabular}%
   }%
   \vspace{2pt}%
   \begin{itemize}#5\end{itemize}%
