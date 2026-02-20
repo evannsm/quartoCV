@@ -38,6 +38,10 @@ Run `make` on a fresh clone to produce example PDFs with fictional data (John Sm
 
 ## Quick Start
 
+> **Don't have Quarto yet?** See the [Installing Quarto](#appendix-installing-quarto) appendix at the bottom of this document first.
+>
+> **Windows users:** `make` is not available by default on Windows. The appendix covers your options — WSL (recommended) or a native `make` install. The Quick Start commands above will not work in PowerShell or Command Prompt without one of those in place.
+
 ```bash
 # Clone the repository
 git clone https://github.com/YOUR_USERNAME/QuartoCV.git
@@ -334,3 +338,97 @@ To add a new entry to any section, create a `.qmd` file in `sections/consulting/
 ## License
 
 This project is released under the [MIT License](https://opensource.org/licenses/MIT). Feel free to use, modify, and distribute.
+
+---
+
+## Appendix: Installing Quarto
+
+> New to Quarto? Follow this guide before running the Quick Start commands. Once Quarto is installed, return to the [Quick Start](#quick-start) section above.
+
+### macOS
+
+**Option A — Homebrew (recommended)**
+```bash
+brew install --cask quarto
+```
+Homebrew handles PATH setup automatically.
+
+**Option B — Direct installer**
+Download the `.pkg` from [quarto.org/docs/get-started](https://quarto.org/docs/get-started/) and run it.
+
+**After installing Quarto, install TinyTeX:**
+```bash
+quarto install tinytex
+```
+
+> **Caveat:** If you installed Quarto via `.pkg` and your shell can't find `quarto`, add `/usr/local/bin` (Intel Mac) or `/opt/homebrew/bin` (Apple Silicon) to your `PATH`. Restart your terminal after installation.
+
+> **`make`:** Ships with macOS Xcode Command Line Tools. If `make` is missing: `xcode-select --install`
+
+---
+
+### Linux
+
+**Debian / Ubuntu (.deb)**
+```bash
+# Check your architecture first: uname -m
+# x86_64 → amd64    aarch64 → arm64
+wget https://quarto.org/download/latest/quarto-linux-amd64.deb
+sudo dpkg -i quarto-linux-amd64.deb
+```
+
+**Fedora / RHEL / openSUSE (.rpm)**
+```bash
+wget https://quarto.org/download/latest/quarto-linux-amd64.rpm
+sudo rpm -U quarto-linux-amd64.rpm
+```
+
+**After installing Quarto, install TinyTeX:**
+```bash
+quarto install tinytex
+```
+
+> **Caveat:** The `.deb`/`.rpm` links above point to the amd64 build. If you are on ARM (e.g., a Raspberry Pi or AWS Graviton), download the `-arm64` variant from the [Quarto releases page](https://github.com/quarto-dev/quarto-cli/releases/latest).
+
+> **Caveat:** On some minimal server images, `libglib2.0` or `libcurl` may be missing. If Quarto fails to launch, install them with `sudo apt-get install -y libglib2.0-0 libcurl4`.
+
+> **`make`:** Usually pre-installed. If missing: `sudo apt-get install build-essential` (Debian/Ubuntu) or `sudo dnf install make` (Fedora).
+
+---
+
+### Windows
+
+**Option A — Installer (recommended)**
+Download the `.msi` from [quarto.org/docs/get-started](https://quarto.org/docs/get-started/) and run it. The installer adds Quarto to your `PATH` automatically.
+
+**Option B — Winget**
+```powershell
+winget install --id Posit.Quarto
+```
+
+**After installing Quarto, install TinyTeX (run in PowerShell or Command Prompt):**
+```powershell
+quarto install tinytex
+```
+
+> **Caveat — `make`:** Windows does not ship with `make`. You have two options:
+>
+> 1. **Use WSL (recommended):** Install [Windows Subsystem for Linux](https://learn.microsoft.com/en-us/windows/wsl/install), then install Quarto and `make` inside WSL following the Linux instructions above. Run all build commands from the WSL terminal.
+>
+> 2. **Install `make` natively:** Install [Git for Windows](https://gitforwindows.org/) (includes Git Bash with `make`) or add `make` via [Chocolatey](https://chocolatey.org/) (`choco install make`) or [Scoop](https://scoop.sh/) (`scoop install make`). Then run `make` from Git Bash or a configured terminal.
+
+> **Caveat — font:** Times New Roman is bundled with Windows, so no extra step is needed. If you switch to a different font, confirm it is installed via **Settings → Fonts**.
+
+> **Caveat — line endings:** If you clone on Windows with `git config core.autocrlf true` (the Git for Windows default), LaTeX source files may get Windows line endings and cause obscure TeX errors. Add a `.gitattributes` file or set `git config core.autocrlf input` before cloning.
+
+---
+
+### Verifying your installation
+
+After installing, confirm everything is in order:
+
+```bash
+quarto check
+```
+
+The output lists the Quarto version, the detected LaTeX installation, and any missing dependencies. All items should show a green checkmark before you run `make`.
