@@ -1,11 +1,11 @@
 # QuartoCV
 ![Status](https://img.shields.io/badge/Status-Job_Market_Validated-blue)
-
-A clean, professional CV/resume template built with [Quarto](https://quarto.org/) and LaTeX. Uses a modular file structure with separate `.qmd` files for each section, making it easy to add, remove, or reorder entries — and to produce multiple document styles from the same shared content.
-
 ![Quarto](https://img.shields.io/badge/Quarto-PDF-blue)
 ![LaTeX](https://img.shields.io/badge/Engine-XeLaTeX-green)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
+
+
+A clean, professional CV/resume template built with [Quarto](https://quarto.org/) and LaTeX. Uses a modular file structure with separate `.qmd` files for each section, making it easy to add, remove, or reorder entries — and to produce multiple document styles from the same shared content.
 
 ## Two Styles Included
 
