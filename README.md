@@ -3,7 +3,7 @@
 ![Quarto](https://img.shields.io/badge/Quarto-PDF-blue)
 ![LaTeX](https://img.shields.io/badge/Engine-XeLaTeX-green)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
-
+[![evannsmc.com](https://img.shields.io/badge/evannsmc.com-Project%20Page-blue)](https://www.evannsmc.com/projects/quartocv)
 
 A clean, professional CV/resume template built with [Quarto](https://quarto.org/) and LaTeX. Uses a modular file structure with separate `.qmd` files for each section, making it easy to add, remove, or reorder entries — and to produce multiple document styles from the same shared content.
 
@@ -335,6 +335,10 @@ To add a new entry to any section, create a `.qmd` file in `sections/consulting/
 ```latex
 {{< include sections/consulting/work/my_new_role.qmd >}}
 ```
+
+## Website
+
+Part of the [**evannsmc** open-source portfolio](https://www.evannsmc.com/projects) — [project page →](https://www.evannsmc.com/projects/quartocv)
 
 ## License
 
