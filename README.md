@@ -338,7 +338,8 @@ To add a new entry to any section, create a `.qmd` file in `sections/consulting/
 
 ## Website
 
-Part of the [**evannsmc** open-source portfolio](https://www.evannsmc.com/projects) — [project page →](https://www.evannsmc.com/projects/quartocv)
+- [evannsmc.com](https://www.evannsmc.com)
+- [Project page](https://www.evannsmc.com/projects/quartocv)
 
 ## License
 
