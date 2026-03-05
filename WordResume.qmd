@@ -1,0 +1,64 @@
+---
+title: ""
+format:
+  docx:
+    reference-doc: resume-reference.docx
+    toc: false
+---
+
+::: {custom-style="ResumeName"}
+**Alex Rivera-Santos**
+:::
+
+::: {custom-style="ResumeContact"}
+\(555\) 342-7819 | [ariveras@northgate.edu](mailto:ariveras@northgate.edu) | [linkedin.com/in/alex-rivera-santos](https://www.linkedin.com/in/alex-rivera-santos)
+:::
+
+# EDUCATION
+
+| **Northgate University of Technology** | Millbrook, OH |
+| --- | ---: |
+| *Department of Electrical Engineering and Computer Science* | August 2021 -- Present |
+| *Doctor of Philosophy in Machine Learning* |  |
+
+| **Clearwater State University** | Clearwater, TX |
+| --- | ---: |
+| *College of Engineering* | August 2017 -- May 2021 |
+| *Bachelor of Science, Computer Engineering, Summa Cum Laude* |  |
+
+# PROFESSIONAL EXPERIENCE
+
+| **Northgate University of Technology -- Adaptive Systems Lab** | Millbrook, OH |
+| --- | ---: |
+| *Graduate Research Assistant* | August 2021 -- Present |
+
+- Designed and implemented novel safe reinforcement learning algorithms for autonomous aerial vehicles
+- Deployed real-time control policies on embedded hardware platforms under strict computational constraints
+- Published and presented research at top-tier conferences and journals in machine learning and robotics
+- Advised by Dr. Priya Nair
+
+| **Northgate University of Technology** | Millbrook, OH |
+| --- | ---: |
+| *Teaching Assistant, Foundations of Machine Learning* | January 2022 -- May 2023 |
+
+- Assisted professor with course instruction for a cohort of 120 graduate students
+- Hosted weekly office hours and review sessions in preparation for exams and assignments
+- Graded homeworks, exams, and programming projects covering supervised and unsupervised learning
+
+| **Clearwater State University -- Embedded Systems Lab** | Clearwater, TX |
+| --- | ---: |
+| *Research Assistant* | November 2019 -- May 2021 |
+
+- Developed low-level firmware for sensor fusion on constrained microcontroller platforms
+- Contributed to original research on energy-efficient path planning for ground vehicles
+- Advised by Dr. Marcus Delgado
+
+# LEADERSHIP AND SERVICE
+
+| **Latin American Engineering Society -- Northgate University of Technology** | Millbrook, OH |
+| --- | ---: |
+| *Co-Founder and President* | September 2022 -- Present |
+
+- Assembled a four-member founding board and secured a faculty advisor and university departmental sponsorship
+- Raised operating funds and recruited members from across the College of Engineering
+- Organized professional development workshops, cultural events, and networking sessions with industry partners

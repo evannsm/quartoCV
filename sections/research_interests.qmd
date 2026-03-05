@@ -1,0 +1,18 @@
+\cvrow{RESEARCH\\INTERESTS}{%
+  \vspace{-8pt}
+  \parbox[t]{0.48\rcolwidth}{%
+    \begin{itemize}
+    \item Safe Reinforcement Learning
+    \item Hardware Deployment
+    \item Unmanned Ground and Aerial Vehicles
+    \end{itemize}%
+  }%
+  \hfill
+  \parbox[t]{0.48\rcolwidth}{%
+    \begin{itemize}
+    \item Advanced Nonlinear Control
+    \item Learning-Based Control
+    \item Trajectory Generation and Planning
+    \end{itemize}%
+  }%
+}

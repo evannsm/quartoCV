@@ -1,0 +1,7 @@
+\cventry{Research Assistant}{Embedded Systems Lab}{November 2019 -- May 2021}
+  {Clearwater State University}{Clearwater, TX}{%
+  \item Advised by Dr. Marcus Delgado
+  \item Received mentorship from a leading researcher in embedded control and real-time systems
+  \item Developed low-level firmware for sensor fusion on constrained microcontroller platforms
+  \item Contributed to original research on energy-efficient path planning for ground vehicles
+}%

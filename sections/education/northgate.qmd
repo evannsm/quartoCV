@@ -1,0 +1,7 @@
+\textbf{Northgate University of Technology} | 2021--Present\\
+Ph.D. in Machine Learning
+\begin{itemize}
+\item GPA: 3.9/4.0
+\item Advisor: Dr. Priya Nair
+\item Graduate Excellence Fellow
+\end{itemize}

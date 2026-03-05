@@ -1,0 +1,7 @@
+\cventry{Graduate Research Assistant}{Adaptive Systems Lab}{August 2021 -- Present}
+  {Northgate University of Technology}{Millbrook, OH}{%
+  \item Advised by Dr. Priya Nair
+  \item Designed and implemented novel safe reinforcement learning algorithms for autonomous aerial vehicles
+  \item Deployed real-time control policies on embedded hardware platforms under strict computational constraints
+  \item Published and presented research at top-tier conferences and journals in machine learning and robotics
+}%

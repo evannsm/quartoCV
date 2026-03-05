@@ -1,0 +1,4 @@
+\begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}
+{\fontsize{18.0pt}{21.6pt}\selectfont\textbf{Alex Rivera-Santos}} & {\fontsize{18.0pt}{21.6pt}\selectfont\textbf{Machine Learning PhD Student}} \\[2pt]
+U.S. Citizen & {\fontsize{18.0pt}{21.6pt}\selectfont\textbf{Northgate University of Technology}} \\
+\end{tabular*}

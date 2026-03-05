@@ -1,0 +1,15 @@
+\cvrow{CONTACT}{%
+  \parbox[t]{0.48\rcolwidth}{%
+    \raggedright
+    \textbf{Email:} \href{mailto:ariveras@northgate.edu}{ariveras@northgate.edu}\\
+    \textbf{Phone:} (555) 342-7819%
+  }%
+  \hfill
+  \parbox[t]{0.48\rcolwidth}{%
+    \raggedleft
+    \textbf{Github:} \href{https://github.com/alexrs-nut}{https://github.com/alexrs-nut}\\
+    \textbf{Website:} \href{https://northgate.edu/\textasciitilde ariveras}{northgate.edu/\textasciitilde ariveras}%
+  }%
+  \\[2pt]
+  \textbf{LinkedIn:} \href{https://www.linkedin.com/in/alex-rivera-santos/}{https://www.linkedin.com/in/alex-rivera-santos/}%
+}

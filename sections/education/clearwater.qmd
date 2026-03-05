@@ -1,0 +1,9 @@
+\textbf{Clearwater State University} | 2017--2021\\
+Honors Bachelor of Science in Computer Engineering\\
+\textit{Minor in Statistics}\\
+\textit{Minor in Mathematics}
+\begin{itemize}
+\item GPA: 3.8/4.0 Summa Cum Laude
+\item Full Merit Scholarship Awarded
+\item Electrical and Computer Engineering Honors Scholar
+\end{itemize}%

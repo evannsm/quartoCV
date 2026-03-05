@@ -1,0 +1,1 @@
+C. Brennan, \textbf{A. Rivera-Santos}, and P. Nair, ``Adaptive Lyapunov Functions for Uncertain Nonlinear Systems with Stochastic Disturbances.'' Submitted to IEEE Transactions on Automatic Control. \textit{(under revision)}
