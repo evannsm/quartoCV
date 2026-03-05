@@ -1,0 +1,7 @@
+\centry{Pathways to College -- UC Davis}{Vice President and Peer Mentor}{Davis, CA}{September 2015 -- June 2019}
+\begin{itemize}
+  \item Led mentorship initiatives serving under-resourced high schools in the Sacramento Valley, coordinating a network of 40 volunteer mentors and 120 high school mentees
+  \item Designed and facilitated workshops for seniors on college application strategy, including personal statement writing, FAFSA completion, scholarship identification, and financial aid appeals
+  \item Reviewed and provided structured feedback on personal statements and supplemental essays, supporting mentees in articulating their identities and goals to admissions committees
+  \item Maintained yearlong one-on-one mentorship relationships, providing academic guidance and emotional support to first-generation college-going students throughout the application cycle
+\end{itemize}

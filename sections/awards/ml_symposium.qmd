@@ -1,2 +1,0 @@
-\cvaward{Top-3 Finalist at the Great Lakes Machine Learning Symposium}{October 2023}
-  {Faculty-sponsored award for outstanding poster presentation on novel safe learning methods}

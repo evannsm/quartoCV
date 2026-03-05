@@ -1,0 +1,6 @@
+\centry{Rising Scholars Summer Institute}{Program Content Manager}{Sacramento, CA}{January 2019 -- May 2019}
+\begin{itemize}
+  \item Developed lesson plans, activity guides, and instructional materials for 120 students (ages 8--14) anchored in STEM, Creative Writing, and Civic Leadership themes
+  \item Trained and supervised 52 camp counselors and activity leads in lesson delivery, youth development principles, and behavior management strategies
+  \item Managed the program curriculum budget, sourcing cost-effective supplies and partnering with local businesses to secure in-kind donations of materials
+\end{itemize}

@@ -1,0 +1,7 @@
+\centry{Filipino Student Union -- Hillside Charter School}{Faculty Advisor}{Oakland, CA}{September 2021 -- June 2023}
+\begin{itemize}
+  \item Facilitated biweekly after-school meetings centered on Filipino and Filipino-American history, cultural identity, and community advocacy
+  \item Organized monthly themed programming spotlighting regional traditions, indigenous languages, and contemporary issues in the Filipino diaspora
+  \item Led cross-cultural dialogue sessions in collaboration with the school's Ethnic Studies department to broaden student understanding of shared struggles and intersecting identities
+  \item Created a safe and affirming space for students navigating questions of cultural belonging, code-switching, and representation in predominantly non-Filipino academic environments
+\end{itemize}

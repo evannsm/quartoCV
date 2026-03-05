@@ -1,0 +1,8 @@
+\centry{Stanford University -- Dean of Students Office}{Student Success Advisor II}{Stanford, CA}{August 2023 -- Present}
+\begin{itemize}
+  \item Advise undergraduate students in the School of Humanities and Sciences on academic planning, major declarations, and degree completion pathways across 50+ interdisciplinary majors
+  \item Support students in the School of Earth, Energy \& Environmental Sciences with program requirements, research opportunities, and graduate school preparation
+  \item Instruct ``COLLEGE 101,'' a first-year transition seminar providing incoming students with strategies for academic success, campus resource navigation, and community engagement
+  \item Guide students through academic difficulty processes including leaves of absence, reinstatement petitions, and academic renewal, collaborating with the Office of Accessible Education as needed
+  \item Develop individualized four-year graduation plans in alignment with university and program requirements, advising a caseload of 380 students
+\end{itemize}

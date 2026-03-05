@@ -1,4 +1,4 @@
-\begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}
-{\fontsize{18.0pt}{21.6pt}\selectfont\textbf{Alex Rivera-Santos}} & {\fontsize{18.0pt}{21.6pt}\selectfont\textbf{Machine Learning PhD Student}} \\[2pt]
-U.S. Citizen & {\fontsize{18.0pt}{21.6pt}\selectfont\textbf{Northgate University of Technology}} \\
-\end{tabular*}
+\begin{center}
+  {\fontsize{18pt}{21.6pt}\selectfont\textbf{Jordan Steele-Watson}}\\[3pt]
+  (555) 819-4237 $|$ \href{mailto:jordan.steelew@gmail.com}{jordan.steelew@gmail.com} $|$ \href{https://www.linkedin.com/in/jordan-steele-watson}{linkedin.com/in/jordan-steele-watson}
+\end{center}

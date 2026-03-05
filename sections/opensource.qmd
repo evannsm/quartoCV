@@ -1,8 +1,0 @@
-\cvrow{{\fontsize{10.3pt}{11.0pt}\selectfont OPEN-SOURCE\\CONTRIBUTIONS}}{%
-  \vspace{-8pt}
-  \begin{itemize}
-  \item \textbf{SafeRL-Toolkit:} Developed and open-sourced a modular Python library implementing safety-constrained reinforcement learning algorithms; adopted by two university research labs as part of their standard experimental workflow.
-
-  \item \textbf{ArduPilot:} Contributed firmware improvements and documentation updates to the official ArduPilot project, targeting enhanced support for custom embedded sensor configurations.
-  \end{itemize}%
-}

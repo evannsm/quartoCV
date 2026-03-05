@@ -1,7 +1,0 @@
-\cventryplain{Co-Founder and President of Latin American Engineering Society}{September 2022 -- Present}
-  {Northgate University of Technology}{Millbrook, OH}{%
-  \item Identified the need for a dedicated community organization for Latin American graduate engineering students
-  \item Assembled a four-member founding board and secured a faculty advisor and university departmental sponsorship
-  \item Raised operating funds and recruited members from across the College of Engineering
-  \item Organized professional development workshops, cultural events, and networking sessions with industry partners
-}%

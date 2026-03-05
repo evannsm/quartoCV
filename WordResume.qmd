@@ -7,58 +7,115 @@ format:
 ---
 
 ::: {custom-style="ResumeName"}
-**Alex Rivera-Santos**
+**Jordan Steele-Watson**
 :::
 
 ::: {custom-style="ResumeContact"}
-\(555\) 342-7819 | [ariveras@northgate.edu](mailto:ariveras@northgate.edu) | [linkedin.com/in/alex-rivera-santos](https://www.linkedin.com/in/alex-rivera-santos)
+\(555\) 819-4237 | [jordan.steelew@gmail.com](mailto:jordan.steelew@gmail.com) | [linkedin.com/in/jordan-steele-watson](https://www.linkedin.com/in/jordan-steele-watson)
 :::
 
 # EDUCATION
 
-| **Northgate University of Technology** | Millbrook, OH |
+| **Stanford University** | Stanford, CA |
 | --- | ---: |
-| *Department of Electrical Engineering and Computer Science* | August 2021 -- Present |
-| *Doctor of Philosophy in Machine Learning* |  |
+| *School of Education* | September 2019 -- June 2021 |
+| *Master of Arts, Student Affairs Administration and Policy* |  |
 
-| **Clearwater State University** | Clearwater, TX |
+| **University of California, Davis** | Davis, CA |
 | --- | ---: |
-| *College of Engineering* | August 2017 -- May 2021 |
-| *Bachelor of Science, Computer Engineering, Summa Cum Laude* |  |
+| *College of Letters and Science* | September 2015 -- June 2019 |
+| *Bachelor of Arts, Psychology; Minor in Sociology* |  |
 
 # PROFESSIONAL EXPERIENCE
 
-| **Northgate University of Technology -- Adaptive Systems Lab** | Millbrook, OH |
+| **Stanford University -- Dean of Students Office** | Stanford, CA |
 | --- | ---: |
-| *Graduate Research Assistant* | August 2021 -- Present |
+| *Student Success Advisor II* | August 2023 -- Present |
 
-- Designed and implemented novel safe reinforcement learning algorithms for autonomous aerial vehicles
-- Deployed real-time control policies on embedded hardware platforms under strict computational constraints
-- Published and presented research at top-tier conferences and journals in machine learning and robotics
-- Advised by Dr. Priya Nair
+- Advise undergraduate students in the School of Humanities and Sciences on academic planning, major declarations, and degree completion pathways across 50+ interdisciplinary majors
+- Support students in the School of Earth, Energy & Environmental Sciences with program requirements, research opportunities, and graduate school preparation
+- Instruct "COLLEGE 101," a first-year transition seminar providing incoming students with strategies for academic success, campus resource navigation, and community engagement
+- Guide students through academic difficulty processes including leaves of absence, reinstatement petitions, and academic renewal, collaborating with the Office of Accessible Education as needed
+- Develop individualized four-year graduation plans in alignment with university and program requirements, advising a caseload of 380 students
 
-| **Northgate University of Technology** | Millbrook, OH |
+| **Stanford University -- Dean of Students Office** | Stanford, CA |
 | --- | ---: |
-| *Teaching Assistant, Foundations of Machine Learning* | January 2022 -- May 2023 |
+| *Student Success Advisor I* | January 2022 -- August 2023 |
 
-- Assisted professor with course instruction for a cohort of 120 graduate students
-- Hosted weekly office hours and review sessions in preparation for exams and assignments
-- Graded homeworks, exams, and programming projects covering supervised and unsupervised learning
+- Advised first-generation and low-income undergraduate students across multiple schools on course selection, academic standing, and financial aid appeals through the FIRST program
+- Managed a caseload of 310 students, building individualized academic plans and providing proactive outreach to students flagged through the early alert system
+- Guided pre-health and pre-law students on prerequisite sequencing, standardized testing timelines, and professional school application requirements
+- Facilitated transfer student orientation programming and served as a primary point of contact for incoming transfer students during their first academic year
 
-| **Clearwater State University -- Embedded Systems Lab** | Clearwater, TX |
+| **Private Academic Tutor** | Palo Alto, CA |
 | --- | ---: |
-| *Research Assistant* | November 2019 -- May 2021 |
+| *SAT/ACT and College Counselor* | September 2021 -- December 2023 |
 
-- Developed low-level firmware for sensor fusion on constrained microcontroller platforms
-- Contributed to original research on energy-efficient path planning for ground vehicles
-- Advised by Dr. Marcus Delgado
+- Delivered individualized instruction in Reading, Writing, and Mathematics to high school students preparing for standardized college admissions exams
+- Supported students through the college application process, providing feedback on personal essays and guidance on school selection and financial aid strategy
 
-# LEADERSHIP AND SERVICE
-
-| **Latin American Engineering Society -- Northgate University of Technology** | Millbrook, OH |
+| **Hillside Charter School** | Oakland, CA |
 | --- | ---: |
-| *Co-Founder and President* | September 2022 -- Present |
+| *10th Grade English Language Arts Teacher* | August 2021 -- June 2023 |
+| *11th Grade Student Teacher* | January 2021 -- May 2021 |
 
-- Assembled a four-member founding board and secured a faculty advisor and university departmental sponsorship
-- Raised operating funds and recruited members from across the College of Engineering
-- Organized professional development workshops, cultural events, and networking sessions with industry partners
+- Achieved highest year-over-year reading growth in the 10th grade cohort on district-wide literacy assessments; 71% of students met or exceeded grade-level benchmarks, exceeding the school average of 58%
+- Designed standards-aligned units integrating social justice literature, student-produced journalism, and Socratic seminar to strengthen critical thinking and academic writing
+- Analyzed formative assessment data weekly to drive differentiated small-group instruction and implement targeted reading intervention for below-grade-level learners
+- Built strong family partnerships through biweekly progress updates and structured parent-teacher conferences, increasing family engagement by 34% over two years
+
+| **UNHCR Kenya -- Kakuma Refugee Camp** | Nairobi, Kenya |
+| --- | ---: |
+| *Education Program Intern* | June 2018 -- August 2018 |
+
+- Designed and delivered differentiated English and numeracy curricula for refugee learners ages 10--35 across five proficiency levels, using project-based learning, storytelling, and peer tutoring models
+- Taught life skills and civic education to secondary students following Kenya's national curriculum framework within the camp's accredited primary schools
+- Applied trauma-informed and culturally responsive instructional practices to support student engagement and psychological safety in a humanitarian learning environment
+
+| **Pathways to College -- UC Davis** | Davis, CA |
+| --- | ---: |
+| *Vice President and Peer Mentor* | September 2015 -- June 2019 |
+
+- Led mentorship initiatives serving under-resourced high schools in the Sacramento Valley, coordinating a network of 40 volunteer mentors and 120 high school mentees
+- Designed and facilitated workshops for seniors on college application strategy, including personal statement writing, FAFSA completion, scholarship identification, and financial aid appeals
+- Reviewed and provided structured feedback on personal statements and supplemental essays, supporting mentees in articulating their identities and goals to admissions committees
+- Maintained yearlong one-on-one mentorship relationships, providing academic guidance and emotional support to first-generation college-going students throughout the application cycle
+
+# LEADERSHIP AND COMMUNITY SERVICE
+
+| **Bay Area Tutors Collective** | San Jose, CA |
+| --- | ---: |
+| *Youth Programs -- Outreach Coordinator* | February 2023 -- February 2024 |
+
+- Conducted community outreach through school partnerships, library tabling, and social media campaigns to connect under-resourced students with free tutoring services across Santa Clara County
+- Coordinated volunteer tutor recruitment, onboarding, and training, growing the active volunteer roster from 28 to 74 tutors over ten months
+- Designed and facilitated a six-week college readiness workshop series for 11th and 12th graders, covering essay writing, financial aid literacy, and campus visit preparation
+- Tracked program outcomes using attendance logs and pre/post surveys, reporting aggregate impact data to funders and board members on a quarterly basis
+- Completed certification in restorative practices and applied restorative circles to resolve conflicts within the volunteer community
+
+| **Filipino Student Union -- Hillside Charter School** | Oakland, CA |
+| --- | ---: |
+| *Faculty Advisor* | September 2021 -- June 2023 |
+
+- Facilitated biweekly after-school meetings centered on Filipino and Filipino-American history, cultural identity, and community advocacy
+- Organized monthly themed programming spotlighting regional traditions, indigenous languages, and contemporary issues in the Filipino diaspora
+- Led cross-cultural dialogue sessions in collaboration with the school's Ethnic Studies department to broaden student understanding of shared struggles and intersecting identities
+- Created a safe and affirming space for students navigating questions of cultural belonging, code-switching, and representation in predominantly non-Filipino academic environments
+
+| **AmeriCorps -- California Volunteers** | Stockton, CA |
+| --- | ---: |
+| *Education and Workforce Readiness Intern* | January 2020 -- August 2020 |
+
+- Supported economic mobility programming for recently displaced workers by co-facilitating job readiness workshops covering resume writing, interview skills, and digital literacy
+- Partnered with community college advisors to connect participants to retraining programs, GED pathways, and occupational certificate courses aligned with regional employer demand
+- Developed plain-language educational materials for workshop handouts, resource guides, and social media outreach targeting low-literacy and non-English-speaking community members
+- Designed and delivered an eight-session financial literacy curriculum for adults covering budgeting, credit building, and benefits enrollment
+- Maintained participant case files and service logs in Salesforce, contributing to grant compliance reporting and quarterly outcome summaries
+
+| **Rising Scholars Summer Institute** | Sacramento, CA |
+| --- | ---: |
+| *Program Content Manager* | January 2019 -- May 2019 |
+
+- Developed lesson plans, activity guides, and instructional materials for 120 students (ages 8--14) anchored in STEM, Creative Writing, and Civic Leadership themes
+- Trained and supervised 52 camp counselors and activity leads in lesson delivery, youth development principles, and behavior management strategies
+- Managed the program curriculum budget, sourcing cost-effective supplies and partnering with local businesses to secure in-kind donations of materials

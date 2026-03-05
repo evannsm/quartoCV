@@ -1,1 +1,0 @@
-\textbf{A. Rivera-Santos}, T. Okafor, P. Nair and R. Feldstein, ``Gradient-Synchronized Barrier Functions for Safe Online Reinforcement Learning.'' \textit{2024 American Control Conference (ACC)}

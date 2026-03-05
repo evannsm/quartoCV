@@ -1,6 +1,0 @@
-\cventry{Teaching Assistant}{Foundations of Machine Learning}{January 2022 -- May 2023}
-  {Northgate University of Technology}{Millbrook, OH}{%
-  \item Assisted professor with course instruction for a cohort of 120 graduate students
-  \item Hosted weekly office hours and review sessions in preparation for exams and assignments
-  \item Graded homeworks, exams, and programming projects covering supervised and unsupervised learning
-}%

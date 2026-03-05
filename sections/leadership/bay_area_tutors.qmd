@@ -1,0 +1,8 @@
+\centry{Bay Area Tutors Collective}{Youth Programs -- Outreach Coordinator}{San Jose, CA}{February 2023 -- February 2024}
+\begin{itemize}
+  \item Conducted community outreach through school partnerships, library tabling, and social media campaigns to connect under-resourced students with free tutoring services across Santa Clara County
+  \item Coordinated volunteer tutor recruitment, onboarding, and training, growing the active volunteer roster from 28 to 74 tutors over ten months
+  \item Designed and facilitated a six-week college readiness workshop series for 11th and 12th graders, covering essay writing, financial aid literacy, and campus visit preparation
+  \item Tracked program outcomes using attendance logs and pre/post surveys, reporting aggregate impact data to funders and board members on a quarterly basis
+  \item Completed certification in restorative practices and applied restorative circles to resolve conflicts within the volunteer community
+\end{itemize}
