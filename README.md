@@ -1,6 +1,6 @@
 # quartoCV
 
-[![Job Market Tested](https://img.shields.io/badge/Job%20Market-Hired%20Using%20This-brightgreen)]()
+[![Job Market](https://img.shields.io/badge/Validated-brightgreen)]()
 [![Built with Quarto](https://img.shields.io/badge/Built%20with-Quarto-blue)](https://quarto.org)
 ![Output](https://img.shields.io/badge/Output-PDF_%26_Word-blue)
 ![Docker Ready](https://img.shields.io/badge/Docker-Ready-blue)
