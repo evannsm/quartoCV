@@ -1,8 +1,0 @@
-\centry{AmeriCorps -- California Volunteers}{Education and Workforce Readiness Intern}{Stockton, CA}{January 2020 -- August 2020}
-\begin{itemize}
-  \item Supported economic mobility programming for recently displaced workers by co-facilitating job readiness workshops covering resume writing, interview skills, and digital literacy
-  \item Partnered with community college advisors to connect participants to retraining programs, GED pathways, and occupational certificate courses aligned with regional employer demand
-  \item Developed plain-language educational materials for workshop handouts, resource guides, and social media outreach targeting low-literacy and non-English-speaking community members
-  \item Designed and delivered an eight-session financial literacy curriculum for adults covering budgeting, credit building, and benefits enrollment
-  \item Maintained participant case files and service logs in Salesforce, contributing to grant compliance reporting and quarterly outcome summaries
-\end{itemize}

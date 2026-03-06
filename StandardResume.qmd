@@ -51,28 +51,28 @@ format:
 
 {{< include sections/education/stanford.qmd >}}
 
-{{< include sections/education/uc_davis.qmd >}}
+{{< include sections/education/ohio_state.qmd >}}
 
 \csection{PROFESSIONAL EXPERIENCE}
 
-{{< include sections/academia/stanford_advisor_ii.qmd >}}
+{{< include sections/work/veridian_senior.qmd >}}
 
-{{< include sections/academia/stanford_advisor_i.qmd >}}
+{{< include sections/work/veridian_analyst.qmd >}}
 
-{{< include sections/academia/private_tutor.qmd >}}
+{{< include sections/work/freelance.qmd >}}
 
-{{< include sections/academia/hillside_charter.qmd >}}
+{{< include sections/work/brightside.qmd >}}
 
-{{< include sections/academia/unhcr_nairobi.qmd >}}
+{{< include sections/work/research_assistant.qmd >}}
 
-{{< include sections/academia/pathways_mentor.qmd >}}
+{{< include sections/work/intern.qmd >}}
 
-\csection{LEADERSHIP AND COMMUNITY SERVICE}
+\csection{LEADERSHIP AND COMMUNITY INVOLVEMENT}
 
-{{< include sections/leadership/bay_area_tutors.qmd >}}
+{{< include sections/leadership/stanford_club.qmd >}}
 
-{{< include sections/leadership/filipino_student_union.qmd >}}
+{{< include sections/leadership/alumni_mentor.qmd >}}
 
-{{< include sections/leadership/americorps.qmd >}}
+{{< include sections/leadership/junior_achievement.qmd >}}
 
-{{< include sections/leadership/rising_scholars.qmd >}}
+{{< include sections/leadership/triathlon_club.qmd >}}

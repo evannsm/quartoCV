@@ -1,0 +1,8 @@
+\centry{Stanford Consulting and Analytics Club}{President}{Stanford, CA}{September 2020 -- June 2021}
+\begin{itemize}
+  \item Led a 140-member graduate organization connecting students with consulting and analytics opportunities through case workshops, speaker events, and recruiting preparation
+  \item Organized a three-day case competition with 80 participants and five company sponsors, managing a \$22,000 event budget and logistics across four venues
+  \item Restructured the club's mentorship program, pairing 45 first-year students with industry professionals and tracking placement outcomes through a purpose-built Airtable system
+  \item Negotiated partnerships with six companies for on-campus recruiting events, expanding the club's employer network by 40\% over the prior year
+  \item Oversaw a four-person executive board and delegated responsibilities across programming, finance, and communications committees
+\end{itemize}

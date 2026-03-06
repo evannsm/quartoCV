@@ -1,8 +1,0 @@
-\centry{Hillside Charter School}{10th Grade English Language Arts Teacher}{Oakland, CA}{August 2021 -- June 2023}
-\csubrole{11th Grade Student Teacher}{January 2021 -- May 2021}
-\begin{itemize}
-  \item Achieved highest year-over-year reading growth in the 10th grade cohort on district-wide literacy assessments; 71\% of students met or exceeded grade-level benchmarks, exceeding the school average of 58\%
-  \item Designed standards-aligned units integrating social justice literature, student-produced journalism, and Socratic seminar to strengthen critical thinking and academic writing
-  \item Analyzed formative assessment data weekly to drive differentiated small-group instruction and implement targeted reading intervention for below-grade-level learners
-  \item Built strong family partnerships through biweekly progress updates and structured parent-teacher conferences, increasing family engagement by 34\% over two years
-\end{itemize}

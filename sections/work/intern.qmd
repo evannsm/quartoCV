@@ -1,0 +1,6 @@
+\centry{Nationwide Insurance}{Data Analytics Intern}{Columbus, OH}{June 2017 -- August 2017}
+\begin{itemize}
+  \item Analyzed claims frequency and severity trends across four product lines using SAS and Excel, presenting findings to a team of 12 actuaries and business analysts
+  \item Designed an interactive Excel dashboard tracking regional loss ratios that was adopted by the Property Analytics team for ongoing monthly reporting
+  \item Completed coursework in actuarial fundamentals and presented a capstone project on predictive modeling for auto insurance pricing to senior leadership
+\end{itemize}

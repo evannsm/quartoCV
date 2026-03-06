@@ -1,4 +1,4 @@
 \begin{center}
-  {\fontsize{18pt}{21.6pt}\selectfont\textbf{Jordan Steele-Watson}}\\[3pt]
-  (555) 819-4237 $|$ \href{mailto:jordan.steelew@gmail.com}{jordan.steelew@gmail.com} $|$ \href{https://www.linkedin.com/in/jordan-steele-watson}{linkedin.com/in/jordan-steele-watson}
+  {\fontsize{18pt}{21.6pt}\selectfont\textbf{Taylor Morris}}\\[3pt]
+  (555) 634-9182 $|$ \href{mailto:taylor.morris@gmail.com}{taylor.morris@gmail.com} $|$ \href{https://www.linkedin.com/in/taylor-morris}{linkedin.com/in/taylor-morris}
 \end{center}

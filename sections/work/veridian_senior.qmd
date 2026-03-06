@@ -1,0 +1,8 @@
+\centry{Veridian Technologies}{Senior Strategy and Analytics Manager}{Austin, TX}{March 2023 -- Present}
+\begin{itemize}
+  \item Lead a team of five analysts supporting go-to-market strategy and revenue operations for a \$420M SaaS product line, owning quarterly business reviews and executive-facing reporting
+  \item Built and maintain a real-time performance dashboard in Tableau consolidating pipeline, churn, and expansion data across three regional sales teams, reducing reporting prep time by 60\%
+  \item Partnered with Finance and Product to design a pricing sensitivity model that informed a tiered pricing restructure, contributing to a 14\% increase in average contract value within two quarters
+  \item Scoped and managed cross-functional initiatives across Sales, Marketing, and Customer Success to improve net revenue retention, increasing NRR from 108\% to 117\% year-over-year
+  \item Mentored two junior analysts on SQL, data modeling, and stakeholder communication; both received promotions within 18 months
+\end{itemize}

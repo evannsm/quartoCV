@@ -1,0 +1,7 @@
+\centry{Brightside Capital Group}{Business Analyst}{Chicago, IL}{July 2018 -- December 2019}
+\begin{itemize}
+  \item Supported a team of six investment analysts in due diligence, financial modeling, and portfolio monitoring for a \$280M mid-market private equity fund
+  \item Built LBO and DCF models for seven deal evaluations, preparing summary memos and recommendation decks presented to the investment committee
+  \item Automated monthly portfolio reporting using Python and Excel VBA, cutting turnaround time from three days to four hours
+  \item Coordinated data room setup and documentation for two completed acquisitions with combined enterprise value of \$95M
+\end{itemize}

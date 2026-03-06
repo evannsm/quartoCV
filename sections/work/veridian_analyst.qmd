@@ -1,0 +1,7 @@
+\centry{Veridian Technologies}{Strategy and Analytics Analyst}{Austin, TX}{August 2021 -- March 2023}
+\begin{itemize}
+  \item Supported strategic planning cycles by building financial models and competitive landscape analyses used to prioritize \$18M in annual product investment
+  \item Developed and maintained SQL pipelines to automate recurring reporting on customer health, usage, and cohort retention, replacing manual Excel processes across three teams
+  \item Collaborated with Product and Engineering to define and track OKRs for two platform launches, synthesizing telemetry data and user research into monthly leadership briefs
+  \item Conducted win/loss analysis on 300+ sales opportunities, identifying pricing and positioning gaps that informed a revised sales playbook adopted company-wide
+\end{itemize}

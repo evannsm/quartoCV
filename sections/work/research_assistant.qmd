@@ -1,0 +1,6 @@
+\centry{Ohio State University -- Department of Statistics}{Undergraduate Research Assistant}{Columbus, OH}{January 2017 -- May 2018}
+\begin{itemize}
+  \item Assisted Professor Linda Hsu on a longitudinal study examining predictors of household financial resilience using PSID microdata across 12,000 survey respondents
+  \item Cleaned, merged, and validated datasets in R; produced visualizations and summary tables incorporated into two conference presentations
+  \item Co-authored a working paper submitted to the Journal of Applied Econometrics; contributed the data pipeline, robustness checks, and appendix tables
+\end{itemize}

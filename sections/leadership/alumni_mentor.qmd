@@ -1,0 +1,7 @@
+\centry{Ohio State University Alumni Association}{Career Mentor -- Volunteer}{Remote}{August 2021 -- Present}
+\begin{itemize}
+  \item Provide one-on-one career coaching to three to five current OSU students and recent graduates each semester, advising on resume strategy, networking, and offer negotiation
+  \item Facilitated two virtual panels on breaking into finance and tech for a combined audience of 200 students through the College of Arts and Sciences career series
+  \item Reviewed and gave structured written feedback on 30+ student resumes and cover letters submitted through the alumni mentoring portal
+  \item Recognized as a top-rated mentor in the 2023 program cohort based on participant satisfaction surveys
+\end{itemize}

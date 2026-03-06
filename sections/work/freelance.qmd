@@ -1,0 +1,5 @@
+\centry{Independent Consultant}{Data and Strategy Consultant}{Remote}{January 2020 -- August 2021}
+\begin{itemize}
+  \item Delivered analytics and market research engagements for three early-stage startups, providing actionable insights on customer segmentation, funnel performance, and unit economics
+  \item Built financial models and investor-facing slide decks supporting two seed-round fundraises totaling \$4.2M
+\end{itemize}

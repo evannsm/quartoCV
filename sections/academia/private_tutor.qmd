@@ -1,5 +1,0 @@
-\centry{Private Academic Tutor}{SAT/ACT and College Counselor}{Palo Alto, CA}{September 2021 -- December 2023}
-\begin{itemize}
-  \item Delivered individualized instruction in Reading, Writing, and Mathematics to high school students preparing for standardized college admissions exams
-  \item Supported students through the college application process, providing feedback on personal essays and guidance on school selection and financial aid strategy
-\end{itemize}

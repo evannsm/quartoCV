@@ -7,115 +7,113 @@ format:
 ---
 
 ::: {custom-style="ResumeName"}
-**Jordan Steele-Watson**
+**Taylor Morris**
 :::
 
 ::: {custom-style="ResumeContact"}
-\(555\) 819-4237 | [jordan.steelew@gmail.com](mailto:jordan.steelew@gmail.com) | [linkedin.com/in/jordan-steele-watson](https://www.linkedin.com/in/jordan-steele-watson)
+\(555\) 634-9182 | [taylor.morris@gmail.com](mailto:taylor.morris@gmail.com) | [linkedin.com/in/taylor-morris](https://www.linkedin.com/in/taylor-morris)
 :::
 
 # EDUCATION
 
 | **Stanford University** | Stanford, CA |
 | --- | ---: |
-| *School of Education* | September 2019 -- June 2021 |
-| *Master of Arts, Student Affairs Administration and Policy* |  |
+| *School of Engineering* | September 2019 -- June 2021 |
+| *Master of Science, Management Science and Engineering* |  |
 
-| **University of California, Davis** | Davis, CA |
+| **Ohio State University** | Columbus, OH |
 | --- | ---: |
-| *College of Letters and Science* | September 2015 -- June 2019 |
-| *Bachelor of Arts, Psychology; Minor in Sociology* |  |
+| *College of Arts and Sciences* | September 2014 -- May 2018 |
+| *Bachelor of Science, Statistics; Minor in Computer Science* |  |
 
 # PROFESSIONAL EXPERIENCE
 
-| **Stanford University -- Dean of Students Office** | Stanford, CA |
+| **Veridian Technologies** | Austin, TX |
 | --- | ---: |
-| *Student Success Advisor II* | August 2023 -- Present |
+| *Senior Strategy and Analytics Manager* | March 2023 -- Present |
 
-- Advise undergraduate students in the School of Humanities and Sciences on academic planning, major declarations, and degree completion pathways across 50+ interdisciplinary majors
-- Support students in the School of Earth, Energy & Environmental Sciences with program requirements, research opportunities, and graduate school preparation
-- Instruct "COLLEGE 101," a first-year transition seminar providing incoming students with strategies for academic success, campus resource navigation, and community engagement
-- Guide students through academic difficulty processes including leaves of absence, reinstatement petitions, and academic renewal, collaborating with the Office of Accessible Education as needed
-- Develop individualized four-year graduation plans in alignment with university and program requirements, advising a caseload of 380 students
+- Lead a team of five analysts supporting go-to-market strategy and revenue operations for a $420M SaaS product line, owning quarterly business reviews and executive-facing reporting
+- Built and maintain a real-time performance dashboard in Tableau consolidating pipeline, churn, and expansion data across three regional sales teams, reducing reporting prep time by 60%
+- Partnered with Finance and Product to design a pricing sensitivity model that informed a tiered pricing restructure, contributing to a 14% increase in average contract value within two quarters
+- Scoped and managed cross-functional initiatives across Sales, Marketing, and Customer Success to improve net revenue retention, increasing NRR from 108% to 117% year-over-year
+- Mentored two junior analysts on SQL, data modeling, and stakeholder communication; both received promotions within 18 months
 
-| **Stanford University -- Dean of Students Office** | Stanford, CA |
+| **Veridian Technologies** | Austin, TX |
 | --- | ---: |
-| *Student Success Advisor I* | January 2022 -- August 2023 |
+| *Strategy and Analytics Analyst* | August 2021 -- March 2023 |
 
-- Advised first-generation and low-income undergraduate students across multiple schools on course selection, academic standing, and financial aid appeals through the FIRST program
-- Managed a caseload of 310 students, building individualized academic plans and providing proactive outreach to students flagged through the early alert system
-- Guided pre-health and pre-law students on prerequisite sequencing, standardized testing timelines, and professional school application requirements
-- Facilitated transfer student orientation programming and served as a primary point of contact for incoming transfer students during their first academic year
+- Supported strategic planning cycles by building financial models and competitive landscape analyses used to prioritize $18M in annual product investment
+- Developed and maintained SQL pipelines to automate recurring reporting on customer health, usage, and cohort retention, replacing manual Excel processes across three teams
+- Collaborated with Product and Engineering to define and track OKRs for two platform launches, synthesizing telemetry data and user research into monthly leadership briefs
+- Conducted win/loss analysis on 300+ sales opportunities, identifying pricing and positioning gaps that informed a revised sales playbook adopted company-wide
 
-| **Private Academic Tutor** | Palo Alto, CA |
+| **Independent Consultant** | Remote |
 | --- | ---: |
-| *SAT/ACT and College Counselor* | September 2021 -- December 2023 |
+| *Data and Strategy Consultant* | January 2020 -- August 2021 |
 
-- Delivered individualized instruction in Reading, Writing, and Mathematics to high school students preparing for standardized college admissions exams
-- Supported students through the college application process, providing feedback on personal essays and guidance on school selection and financial aid strategy
+- Delivered analytics and market research engagements for three early-stage startups, providing actionable insights on customer segmentation, funnel performance, and unit economics
+- Built financial models and investor-facing slide decks supporting two seed-round fundraises totaling $4.2M
 
-| **Hillside Charter School** | Oakland, CA |
+| **Brightside Capital Group** | Chicago, IL |
 | --- | ---: |
-| *10th Grade English Language Arts Teacher* | August 2021 -- June 2023 |
-| *11th Grade Student Teacher* | January 2021 -- May 2021 |
+| *Business Analyst* | July 2018 -- December 2019 |
 
-- Achieved highest year-over-year reading growth in the 10th grade cohort on district-wide literacy assessments; 71% of students met or exceeded grade-level benchmarks, exceeding the school average of 58%
-- Designed standards-aligned units integrating social justice literature, student-produced journalism, and Socratic seminar to strengthen critical thinking and academic writing
-- Analyzed formative assessment data weekly to drive differentiated small-group instruction and implement targeted reading intervention for below-grade-level learners
-- Built strong family partnerships through biweekly progress updates and structured parent-teacher conferences, increasing family engagement by 34% over two years
+- Supported a team of six investment analysts in due diligence, financial modeling, and portfolio monitoring for a $280M mid-market private equity fund
+- Built LBO and DCF models for seven deal evaluations, preparing summary memos and recommendation decks presented to the investment committee
+- Automated monthly portfolio reporting using Python and Excel VBA, cutting turnaround time from three days to four hours
+- Coordinated data room setup and documentation for two completed acquisitions with combined enterprise value of $95M
 
-| **UNHCR Kenya -- Kakuma Refugee Camp** | Nairobi, Kenya |
+| **Ohio State University -- Department of Statistics** | Columbus, OH |
 | --- | ---: |
-| *Education Program Intern* | June 2018 -- August 2018 |
+| *Undergraduate Research Assistant* | January 2017 -- May 2018 |
 
-- Designed and delivered differentiated English and numeracy curricula for refugee learners ages 10--35 across five proficiency levels, using project-based learning, storytelling, and peer tutoring models
-- Taught life skills and civic education to secondary students following Kenya's national curriculum framework within the camp's accredited primary schools
-- Applied trauma-informed and culturally responsive instructional practices to support student engagement and psychological safety in a humanitarian learning environment
+- Assisted Professor Linda Hsu on a longitudinal study examining predictors of household financial resilience using PSID microdata across 12,000 survey respondents
+- Cleaned, merged, and validated datasets in R; produced visualizations and summary tables incorporated into two conference presentations
+- Co-authored a working paper submitted to the Journal of Applied Econometrics; contributed the data pipeline, robustness checks, and appendix tables
 
-| **Pathways to College -- UC Davis** | Davis, CA |
+| **Nationwide Insurance** | Columbus, OH |
 | --- | ---: |
-| *Vice President and Peer Mentor* | September 2015 -- June 2019 |
+| *Data Analytics Intern* | June 2017 -- August 2017 |
 
-- Led mentorship initiatives serving under-resourced high schools in the Sacramento Valley, coordinating a network of 40 volunteer mentors and 120 high school mentees
-- Designed and facilitated workshops for seniors on college application strategy, including personal statement writing, FAFSA completion, scholarship identification, and financial aid appeals
-- Reviewed and provided structured feedback on personal statements and supplemental essays, supporting mentees in articulating their identities and goals to admissions committees
-- Maintained yearlong one-on-one mentorship relationships, providing academic guidance and emotional support to first-generation college-going students throughout the application cycle
+- Analyzed claims frequency and severity trends across four product lines using SAS and Excel, presenting findings to a team of 12 actuaries and business analysts
+- Designed an interactive Excel dashboard tracking regional loss ratios that was adopted by the Property Analytics team for ongoing monthly reporting
+- Completed coursework in actuarial fundamentals and presented a capstone project on predictive modeling for auto insurance pricing to senior leadership
 
-# LEADERSHIP AND COMMUNITY SERVICE
+# LEADERSHIP AND COMMUNITY INVOLVEMENT
 
-| **Bay Area Tutors Collective** | San Jose, CA |
+| **Stanford Consulting and Analytics Club** | Stanford, CA |
 | --- | ---: |
-| *Youth Programs -- Outreach Coordinator* | February 2023 -- February 2024 |
+| *President* | September 2020 -- June 2021 |
 
-- Conducted community outreach through school partnerships, library tabling, and social media campaigns to connect under-resourced students with free tutoring services across Santa Clara County
-- Coordinated volunteer tutor recruitment, onboarding, and training, growing the active volunteer roster from 28 to 74 tutors over ten months
-- Designed and facilitated a six-week college readiness workshop series for 11th and 12th graders, covering essay writing, financial aid literacy, and campus visit preparation
-- Tracked program outcomes using attendance logs and pre/post surveys, reporting aggregate impact data to funders and board members on a quarterly basis
-- Completed certification in restorative practices and applied restorative circles to resolve conflicts within the volunteer community
+- Led a 140-member graduate organization connecting students with consulting and analytics opportunities through case workshops, speaker events, and recruiting preparation
+- Organized a three-day case competition with 80 participants and five company sponsors, managing a $22,000 event budget and logistics across four venues
+- Restructured the club's mentorship program, pairing 45 first-year students with industry professionals and tracking placement outcomes through a purpose-built Airtable system
+- Negotiated partnerships with six companies for on-campus recruiting events, expanding the club's employer network by 40% over the prior year
+- Oversaw a four-person executive board and delegated responsibilities across programming, finance, and communications committees
 
-| **Filipino Student Union -- Hillside Charter School** | Oakland, CA |
+| **Ohio State University Alumni Association** | Remote |
 | --- | ---: |
-| *Faculty Advisor* | September 2021 -- June 2023 |
+| *Career Mentor -- Volunteer* | August 2021 -- Present |
 
-- Facilitated biweekly after-school meetings centered on Filipino and Filipino-American history, cultural identity, and community advocacy
-- Organized monthly themed programming spotlighting regional traditions, indigenous languages, and contemporary issues in the Filipino diaspora
-- Led cross-cultural dialogue sessions in collaboration with the school's Ethnic Studies department to broaden student understanding of shared struggles and intersecting identities
-- Created a safe and affirming space for students navigating questions of cultural belonging, code-switching, and representation in predominantly non-Filipino academic environments
+- Provide one-on-one career coaching to three to five current OSU students and recent graduates each semester, advising on resume strategy, networking, and offer negotiation
+- Facilitated two virtual panels on breaking into finance and tech for a combined audience of 200 students through the College of Arts and Sciences career series
+- Reviewed and gave structured written feedback on 30+ student resumes and cover letters submitted through the alumni mentoring portal
+- Recognized as a top-rated mentor in the 2023 program cohort based on participant satisfaction surveys
 
-| **AmeriCorps -- California Volunteers** | Stockton, CA |
+| **Junior Achievement of Central Texas** | Austin, TX |
 | --- | ---: |
-| *Education and Workforce Readiness Intern* | January 2020 -- August 2020 |
+| *Volunteer Financial Literacy Instructor* | September 2022 -- May 2024 |
 
-- Supported economic mobility programming for recently displaced workers by co-facilitating job readiness workshops covering resume writing, interview skills, and digital literacy
-- Partnered with community college advisors to connect participants to retraining programs, GED pathways, and occupational certificate courses aligned with regional employer demand
-- Developed plain-language educational materials for workshop handouts, resource guides, and social media outreach targeting low-literacy and non-English-speaking community members
-- Designed and delivered an eight-session financial literacy curriculum for adults covering budgeting, credit building, and benefits enrollment
-- Maintained participant case files and service logs in Salesforce, contributing to grant compliance reporting and quarterly outcome summaries
+- Delivered a six-session financial literacy curriculum to 8th graders at three Title I middle schools covering budgeting, saving, credit, and entrepreneurship
+- Adapted lesson content and pacing for mixed-ability classrooms, maintaining average session engagement scores above 4.5 out of 5
+- Coordinated logistics for a student business pitch competition, recruiting four local small business owners as judges and sourcing $800 in prize funding from community sponsors
+- Trained two new volunteer instructors on JA curriculum standards and classroom facilitation best practices
+- Reached 340 students across two academic years; 91% of post-program survey respondents reported increased confidence in managing personal finances
 
-| **Rising Scholars Summer Institute** | Sacramento, CA |
+| **Austin Triathlon Club** | Austin, TX |
 | --- | ---: |
-| *Program Content Manager* | January 2019 -- May 2019 |
+| *Events and Logistics Coordinator* | March 2022 -- March 2023 |
 
-- Developed lesson plans, activity guides, and instructional materials for 120 students (ages 8--14) anchored in STEM, Creative Writing, and Civic Leadership themes
-- Trained and supervised 52 camp counselors and activity leads in lesson delivery, youth development principles, and behavior management strategies
-- Managed the program curriculum budget, sourcing cost-effective supplies and partnering with local businesses to secure in-kind donations of materials
+- Coordinated logistics for eight club-sponsored training events and two local charity races with combined participation of 600 athletes, managing vendor relationships, course permits, and volunteer scheduling
+- Built and maintained the club's event registration system in Eventbrite and managed communications to a mailing list of 850 members
+- Negotiated discounted race entry and gear partnerships with four local sponsors, saving club members an estimated $3,500 annually

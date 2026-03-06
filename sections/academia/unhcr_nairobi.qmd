@@ -1,6 +1,0 @@
-\centry{UNHCR Kenya -- Kakuma Refugee Camp}{Education Program Intern}{Nairobi, Kenya}{June 2018 -- August 2018}
-\begin{itemize}
-  \item Designed and delivered differentiated English and numeracy curricula for refugee learners ages 10--35 across five proficiency levels, using project-based learning, storytelling, and peer tutoring models
-  \item Taught life skills and civic education to secondary students following Kenya's national curriculum framework within the camp's accredited primary schools
-  \item Applied trauma-informed and culturally responsive instructional practices to support student engagement and psychological safety in a humanitarian learning environment
-\end{itemize}

@@ -1,7 +1,0 @@
-\centry{Stanford University -- Dean of Students Office}{Student Success Advisor I}{Stanford, CA}{January 2022 -- August 2023}
-\begin{itemize}
-  \item Advised first-generation and low-income undergraduate students across multiple schools on course selection, academic standing, and financial aid appeals through the FIRST program
-  \item Managed a caseload of 310 students, building individualized academic plans and providing proactive outreach to students flagged through the early alert system
-  \item Guided pre-health and pre-law students on prerequisite sequencing, standardized testing timelines, and professional school application requirements
-  \item Facilitated transfer student orientation programming and served as a primary point of contact for incoming transfer students during their first academic year
-\end{itemize}

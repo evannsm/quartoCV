@@ -1,0 +1,8 @@
+\centry{Junior Achievement of Central Texas}{Volunteer Financial Literacy Instructor}{Austin, TX}{September 2022 -- May 2024}
+\begin{itemize}
+  \item Delivered a six-session financial literacy curriculum to 8th graders at three Title I middle schools, covering budgeting, saving, credit, and entrepreneurship using JA's hands-on program materials
+  \item Adapted lesson content and pacing for mixed-ability classrooms in coordination with classroom teachers, maintaining average session engagement scores above 4.5 out of 5
+  \item Coordinated logistics for a student business pitch competition, recruiting four local small business owners as judges and sourcing \$800 in prize funding from community sponsors
+  \item Trained two new volunteer instructors on JA curriculum standards and classroom facilitation best practices
+  \item Reached 340 students across two academic years; 91\% of post-program survey respondents reported increased confidence in managing personal finances
+\end{itemize}
