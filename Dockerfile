@@ -25,9 +25,9 @@ RUN apt-get update && apt-get install -y \
 
 # Quarto — pin version; override at build time with --build-arg QUARTO_VERSION=x.y.z
 ARG QUARTO_VERSION=1.6.39
-RUN test -n "${QUARTO_VERSION}" \
+RUN ARCH=$(dpkg --print-architecture) \
     && curl -fsSL \
-       "https://github.com/quarto-dev/quarto-cli/releases/download/v${QUARTO_VERSION}/quarto-${QUARTO_VERSION}-linux-amd64.deb" \
+       "https://github.com/quarto-dev/quarto-cli/releases/download/v${QUARTO_VERSION}/quarto-${QUARTO_VERSION}-linux-${ARCH}.deb" \
        -o /tmp/quarto.deb \
     && dpkg -i /tmp/quarto.deb \
     && rm /tmp/quarto.deb
