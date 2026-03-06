@@ -2,5 +2,5 @@
 \begin{itemize}
   \item Coordinated logistics for eight club-sponsored training events and two local charity races with combined participation of 600 athletes, managing vendor relationships, course permits, and volunteer scheduling
   \item Built and maintained the club's event registration system in Eventbrite and managed communications to a mailing list of 850 members
-  \item Negotiated discounted race entry and gear partnerships with four local sponsors, saving club members an estimated \$3,500 annually
+  \item Negotiated discounted race entry and gear partnerships with four local sponsors, saving club members an estimated \$3,500
 \end{itemize}
