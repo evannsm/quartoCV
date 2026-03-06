@@ -1,54 +1,95 @@
 # quartoCV
 
-A modular resume/CV system built with [Quarto](https://quarto.org/). Write your content once in small, reusable `.qmd` section files and compile to a polished PDF and Word document with a single command.
+A modular resume and CV system built with [Quarto](https://quarto.org/). Write your content once in small, focused section files and compile to a polished PDF and Word document with a single command. Reordering, adding, or removing entries is as simple as editing a list.
 
-This repo ships with a fictional example resume (Jordan Steele-Watson) so you can see exactly what the output looks like before swapping in your own content.
+This repo ships with a fictional example resume so you can see exactly what the output looks like before swapping in your own content.
 
 ---
 
-## What this repo produces
+## What this produces
 
-| Command | Output |
+| File | Description |
 | --- | --- |
-| `make` | `FinalProducts/StandardResume.pdf` — single-column consulting-style PDF |
-| `make` | `FinalProducts/WordResume.docx` — formatted Word document |
+| `FinalProducts/StandardResume.pdf` | Single-column, consulting-style PDF |
+| `FinalProducts/WordResume.docx` | Formatted Word document |
 
 ---
 
-## How the content is organized
+## Quick start
+
+**Already have Quarto and LaTeX?**
+```bash
+make
+```
+
+**Want to use Docker instead (no installs needed)?**
+```bash
+docker build -t quartocv .
+make docker-render
+```
+
+Need to set up first? Jump to:
+- [Set up with Docker](#set-up-with-docker-recommended) — Mac, Linux, or Windows
+- [Install Quarto on Mac](#install-quarto-on-mac)
+- [Install Quarto on Linux](#install-quarto-on-linux)
+- [Install Quarto on Windows](#install-quarto-on-windows)
+
+---
+
+## How content is organized
 
 ```
 sections/
-  header.qmd               # Name and contact line at the top
-  education/               # One .qmd file per school
-  academia/                # One .qmd file per job
-  leadership/              # One .qmd file per role
-StandardResume.qmd         # Assembles the PDF — just a list of {{< include >}} calls
-WordResume.qmd             # Same content written in Markdown tables for Word output
-preamble_consulting.tex    # LaTeX macros that define the visual style
+  header.qmd          # Name and contact line
+  education/          # One .qmd file per school
+  work/               # One .qmd file per job
+  leadership/         # One .qmd file per role
+StandardResume.qmd    # PDF layout — assembles sections with {{< include >}}
+WordResume.qmd        # Word layout — same content as Markdown tables
+preamble_consulting.tex   # LaTeX macros that control the visual style
 ```
 
-To add, remove, or reorder entries, edit `StandardResume.qmd` and `WordResume.qmd`. To change the content of an entry, edit the corresponding file in `sections/`.
+To reorder entries, edit the `{{< include >}}` list in `StandardResume.qmd` and `WordResume.qmd`. To edit an entry's content, open the corresponding file in `sections/`.
 
 ---
 
-## Option 1 — Docker (recommended, works on Mac / Linux / Windows)
+## Make commands
 
-Docker runs the entire build inside a container so you do not need to install Quarto, LaTeX, or any fonts on your machine.
+| Command | What it does |
+| --- | --- |
+| `make` | Build both PDF and Word outputs |
+| `make docker-render` | Build both outputs inside Docker |
+| `make FinalProducts/StandardResume.pdf` | Build only the PDF |
+| `make FinalProducts/WordResume.docx` | Build only the Word file |
+| `make clean` | Delete all generated outputs |
+
+---
+
+## Customizing the style
+
+- **Margins, font size, page size** — YAML front matter at the top of `StandardResume.qmd`
+- **Section heading and entry spacing** — `preamble_consulting.tex`
+- **Word document fonts and heading styles** — open `resume-reference.docx` in Word, modify the named styles (Heading 1, Heading 2, etc.), and save
+
+---
+
+## Set up with Docker (recommended)
+
+Docker handles everything — Quarto, LaTeX, and fonts — inside a container. Nothing gets installed on your machine.
 
 ### Install Docker
 
 - **Mac:** [Docker Desktop for Mac](https://docs.docker.com/desktop/install/mac-install/)
-- **Windows:** [Docker Desktop for Windows](https://docs.docker.com/desktop/install/windows-install/) (requires WSL 2)
+- **Windows:** [Docker Desktop for Windows](https://docs.docker.com/desktop/install/windows-install/) — requires WSL 2 (Docker Desktop will prompt you to enable it)
 - **Linux:** [Docker Engine](https://docs.docker.com/engine/install/) for your distro
 
-### Build the image (one time)
+### Build the image (one time only)
 
 ```bash
 docker build -t quartocv .
 ```
 
-This takes a few minutes the first time (it installs LaTeX, fonts, and Quarto). You only need to do it once.
+This takes a few minutes the first time. You won't need to do it again unless the Dockerfile changes.
 
 ### Build your resume
 
@@ -56,56 +97,37 @@ This takes a few minutes the first time (it installs LaTeX, fonts, and Quarto). 
 make docker-render
 ```
 
-Outputs land in `FinalProducts/`.
-
-> **Windows note:** `make` is not available by default on Windows. Run the command inside WSL 2, or install [Make for Windows](https://gnuwin32.sourceforge.net/packages/make.htm) and run it in PowerShell.
+> **Windows:** `make` is not available by default. Either run this inside WSL 2 (recommended), or install [Make for Windows](https://gnuwin32.sourceforge.net/packages/make.htm) and run it from PowerShell.
 
 ---
 
-## Option 2 — Native Quarto install (no Docker)
-
-If you prefer to run Quarto directly on your machine:
+## Install Quarto on Mac
 
 ### 1. Install Quarto
 
-Download the installer for your OS from [quarto.org/docs/get-started](https://quarto.org/docs/get-started/).
+```bash
+brew install quarto
+```
 
-- **Mac:** `.pkg` installer or `brew install quarto`
-- **Windows:** `.msi` installer
-- **Linux:** `.deb` or `.rpm` package
+Or download the `.pkg` installer from [quarto.org/docs/get-started](https://quarto.org/docs/get-started/).
 
 ### 2. Install a LaTeX engine
-
-Quarto uses XeLaTeX to render PDFs. The easiest way is to install TinyTeX via Quarto:
 
 ```bash
 quarto install tinytex
 ```
 
-Or install a full TeX distribution:
+Or install the full [MacTeX](https://www.tug.org/mactex/) distribution if you prefer.
 
-- **Mac:** [MacTeX](https://www.tug.org/mactex/)
-- **Windows:** [MiKTeX](https://miktex.org/download) or [TeX Live](https://www.tug.org/texlive/)
-- **Linux:** `sudo apt install texlive-xetex texlive-fonts-recommended texlive-fonts-extra`
-
-### 3. Install Times New Roman
-
-The PDF uses Times New Roman. It is pre-installed on Mac and Windows. On Linux:
+### 3. Install Python
 
 ```bash
-sudo apt install ttf-mscorefonts-installer
-sudo fc-cache -f
+brew install python
 ```
 
-### 4. Install Python
+Or download from [python.org](https://www.python.org/downloads/). Python 3.8+ is required.
 
-The Word post-processor is a small Python script that requires only the standard library. Any Python 3.8+ install works.
-
-- **Mac:** `brew install python` or [python.org](https://www.python.org/downloads/)
-- **Windows:** [python.org](https://www.python.org/downloads/)
-- **Linux:** `sudo apt install python3`
-
-### 5. Build
+### 4. Build
 
 ```bash
 make
@@ -113,20 +135,70 @@ make
 
 ---
 
-## Make commands
+## Install Quarto on Linux
 
-| Command | Description |
-| --- | --- |
-| `make` | Build both PDF and Word outputs |
-| `make docker-render` | Build both outputs inside Docker |
-| `make FinalProducts/StandardResume.pdf` | Build only the PDF |
-| `make FinalProducts/WordResume.docx` | Build only the Word file |
-| `make clean` | Delete all generated output files |
+### 1. Install Quarto
+
+Download the `.deb` or `.rpm` package for your distro from [quarto.org/docs/get-started](https://quarto.org/docs/get-started/), then install it:
+
+```bash
+# Debian/Ubuntu
+sudo dpkg -i quarto-*.deb
+
+# Fedora/RHEL
+sudo rpm -i quarto-*.rpm
+```
+
+### 2. Install LaTeX and fonts
+
+```bash
+sudo apt install texlive-xetex texlive-fonts-recommended texlive-fonts-extra
+
+# Times New Roman
+sudo apt install ttf-mscorefonts-installer
+sudo fc-cache -f
+```
+
+### 3. Install Python
+
+```bash
+sudo apt install python3
+```
+
+### 4. Build
+
+```bash
+make
+```
 
 ---
 
-## Customizing the style
+## Install Quarto on Windows
 
-- **Margins, font size, page size:** top of `StandardResume.qmd` in the YAML front matter
-- **Section heading style, entry spacing:** `preamble_consulting.tex`
-- **Word document styles** (fonts, heading formats): `resume-reference.docx` — open it in Word, modify the named styles (Heading 1, Heading 2, etc.), and save
+### 1. Install Quarto
+
+Download the `.msi` installer from [quarto.org/docs/get-started](https://quarto.org/docs/get-started/) and run it.
+
+### 2. Install a LaTeX engine
+
+Open a terminal and run:
+
+```bash
+quarto install tinytex
+```
+
+Or install [MiKTeX](https://miktex.org/download), which handles package downloads automatically on first use.
+
+### 3. Install Python
+
+Download and install Python 3.8+ from [python.org](https://www.python.org/downloads/). Check "Add Python to PATH" during installation.
+
+### 4. Install Make
+
+`make` is not included with Windows. The easiest option is to use WSL 2 (Windows Subsystem for Linux) and follow the Linux instructions above. Alternatively, install [Make for Windows](https://gnuwin32.sourceforge.net/packages/make.htm) and run commands from PowerShell.
+
+### 5. Build
+
+```bash
+make
+```
