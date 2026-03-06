@@ -21,7 +21,7 @@ format:
             \vspace{10pt}%
             \noindent\textbf{#1}\\[-8pt]%
             \rule{\textwidth}{0.5pt}\par%
-            \vspace{1pt}%
+            \vspace{-6pt}%
           }
           \renewcommand{\centry}[4]{%
             \vspace{9pt}%
