@@ -23,9 +23,9 @@ RUN apt-get update && apt-get install -y \
     texlive-latex-extra \
     && rm -rf /var/lib/apt/lists/*
 
-# Quarto (latest stable)
-RUN QUARTO_VERSION=$(curl -s https://api.github.com/repos/quarto-dev/quarto-cli/releases/latest \
-      | grep '"tag_name"' | sed 's/.*"v\([^"]*\)".*/\1/') \
+# Quarto — pin version; override at build time with --build-arg QUARTO_VERSION=x.y.z
+ARG QUARTO_VERSION=1.6.39
+RUN test -n "${QUARTO_VERSION}" \
     && curl -fsSL \
        "https://github.com/quarto-dev/quarto-cli/releases/download/v${QUARTO_VERSION}/quarto-${QUARTO_VERSION}-linux-amd64.deb" \
        -o /tmp/quarto.deb \
