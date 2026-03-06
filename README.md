@@ -1,5 +1,12 @@
 # quartoCV
 
+[![Job Market Tested](https://img.shields.io/badge/Job%20Market-Hired%20Using%20This-brightgreen)]()
+[![Built with Quarto](https://img.shields.io/badge/Built%20with-Quarto-blue)](https://quarto.org)
+![Output](https://img.shields.io/badge/Output-PDF_%26_Word-blue)
+![Docker Ready](https://img.shields.io/badge/Docker-Ready-blue)
+[![LaTeX Quality](https://img.shields.io/badge/Typesetting-LaTeX%20Quality-orange)]()
+[![evannsmc.com](https://img.shields.io/badge/evannsmc.com-Portfolio-blue)](https://www.evannsmc.com)
+
 A modular resume and CV system built with [Quarto](https://quarto.org/). Write your content once in small, focused section files and compile to a polished PDF and Word document with a single command. Reordering, adding, or removing entries is as simple as editing a list.
 
 This repo ships with a fictional example resume so you can see exactly what the output looks like before swapping in your own content.
